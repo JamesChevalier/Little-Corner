@@ -1,0 +1,27 @@
+= Launch-Soon
+
+Little Corner is a drop-in PHP site that provides your own personal hub-type website that automatically pulls information in from many mainstream sites and services.  The site is built on CodeIgniter (2.0.2), which is included in the project.
+
+This is an early release, so there's still a lot of customization that hasn't been added in yet & everything is still quite hard-coded into the site itself.
+
+
+=== Pre-requisites
+
+* A Twitter account
+* A Foursquare account
+* A Last.FM account
+* A Google Analytics Web Property ID (UA-#######-##)
+* A Blog that provides an RSS feed
+* A web server (eg; Apache)
+
+
+=== Configuration
+
+* Copy site into place (verify presence of .htaccess file)
+* Add your own favicon.ico to the root directory
+* Add your own "bg.jpg" image to the /resources/images directory (a larger-sized image is best; something like 1920x1200 or so)
+* Add your own 'projects' images (150w x 80h) to the /resources/images directory
+* Register a Twitter application at http://dev.twitter.com/ & allow it access to your account
+* In the /application/config/config.php file - You will need to fill out the entire "Custom Site Configuration" section (unless a setting is noted as optional or not-to-be-touched)
+* In the /application/config/config.php file - Edit the $config['base_url'] line
+* Edit the /application/views/projects.php file accordingly
