@@ -18,6 +18,14 @@ $config['my_blog_url'] = '';
 $config['blog_rss_url'] = '';
 
 /*
+| Settings for the Bookmarks page
+*/
+// Enter the full URL to your delicious profile page - include the http://
+$config['delicious_url'] = '';
+// Enter the full RSS URL for your delicious feed - include the http://
+$config['delicious_rss_url'] = '';
+
+/*
 | Settings for the Contact page
 */
 // Enter the email address you'd like to receive messages at

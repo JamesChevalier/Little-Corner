@@ -10,6 +10,7 @@ This is an early release, so there's still a lot of customization that hasn't be
 * A Twitter account
 * A Foursquare account
 * A Last.FM account
+* A Delicious account
 * A Google Analytics Web Property ID (UA-#######-##)
 * A Blog that provides an RSS feed
 * A web server (eg; Apache)

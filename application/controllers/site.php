@@ -22,6 +22,18 @@ class Site extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	// Bookmarks Page
+	function bookmarks()
+	{
+		$this->load->library('myfunctions');
+		$this->load->library('RSSParser', array('url' => $this->config->item('delicious_rss_url'), 'life' => 0));
+		$posts = array('posts' => $this->rssparser->getFeed(15));
+		$pagename = array('pagename' => 'Bookmarks');
+		$this->load->view('header', $pagename);
+		$this->load->view('bookmarks', $posts);
+		$this->load->view('footer');
+	}
+
 	// Contact Page
 	function contact()
 	{

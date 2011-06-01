@@ -28,6 +28,7 @@
 						<li><a href="/contact">Contact</a></li>
 						<li><a href="/projects">Projects</a></li>
 						<li><a href="/blog">Blog</a></li>
+						<li><a href="/bookmarks">Bookmarks</a></li>
 						<li><a href="/twitter">Twitter</a> (<a href="/favorites">Favorites</a>)</li>
 						<li><a href="/foursquare">Foursquare</a></li>
 						<li><a href="/lastfm">Last.FM</a></li>
