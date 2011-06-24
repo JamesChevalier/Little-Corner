@@ -1,3 +1,8 @@
+<?php
+if ($this->config->item('contactpage_enabled') != 1){
+	redirect(base_url(),'refresh');
+}
+?>
 		<div id="container">
 			<div class="transparency"></div>
 			<div class="content">

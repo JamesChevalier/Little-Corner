@@ -18,20 +18,36 @@
 		</script>
 	</head>
 	<body>
-		<div id="navbg" name="bg_name"></div>
-		<div id="nav">
-				<div id="navtext">
+		<div id="navcontainer">
+			<div class="navtransparency"></div>
+				<div class="navcontent">
 					<img src="<?php echo $this->config->item('site_avatar'); ?>">
 					<p><?php echo $this->config->item('short_description'); ?></p>
 					<ul id="navlist">
 						<li><a href="/">Home</a></li>
-						<li><a href="/contact">Contact</a></li>
-						<li><a href="/projects">Projects</a></li>
-						<li><a href="/blog">Blog</a></li>
-						<li><a href="/bookmarks">Bookmarks</a></li>
-						<li><a href="/twitter">Twitter</a> (<a href="/favorites">Favorites</a>)</li>
-						<li><a href="/foursquare">Foursquare</a></li>
-						<li><a href="/lastfm">Last.FM</a></li>
+						<?php
+						if ($this->config->item('contactpage_enabled')==1){
+							echo "<li><a href=\"/contact\">Contact</a></li>";
+						}
+						if ($this->config->item('projects_enabled')==1){
+							echo "<li><a href=\"/projects\">Projects</a></li>";
+						}
+						if ($this->config->item('blog_enabled')==1){
+							echo "<li><a href=\"/blog\">Blog</a></li>";
+						}
+						if ($this->config->item('delicious_enabled')==1){
+							echo "<li><a href=\"/bookmarks\">Bookmarks</a></li>";
+						}
+						if ($this->config->item('twitter_enabled')==1){
+							echo "<li><a href=\"/twitter\">Twitter</a> (<a href=\"/favorites\">Favorites</a>)</li>";
+						}
+						if ($this->config->item('foursquare_enabled')==1){
+							echo "<li><a href=\"/foursquare\">Foursquare</a></li>";
+						}
+						if ($this->config->item('lastfm_enabled')==1){
+							echo "<li><a href=\"/lastfm\">Last.FM</a></li>";
+						}
+						?>
 					</ul>
 				</div>
 		</div>

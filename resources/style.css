@@ -73,14 +73,16 @@ img{
 	background-color: transparent;
 	border-color: transparent;
 }
-#nav{
+#navcontainer
+{
 	position: fixed;
 	top:100px;
 	left:50px;
 	width:300px;
 	height:400px;
 }
-#navbg{
+#navcontainer .navtransparency
+{
 	position: fixed;
 	top:100px;
 	left:50px;
@@ -94,6 +96,18 @@ img{
 	opacity: 0.7;
 	-moz-opacity: 0.7;
 	-khtml-opacity:0.7;
+}
+.navcontent
+{
+	position:relative;
+	text-align: left;
+	padding-top: 5px;
+	padding-left: 3px;
+	padding-right: 1px;
+}
+.navcontent img{
+	display: block;
+	margin: auto;
 }
 #navlist{
 	padding: 0 0.25px 0.25px;
@@ -109,20 +123,6 @@ img{
 	text-decoration: none;
 	color: #ddd;
 }
-#navtext{
-	padding-top: 5px;
-	padding-left: 3px;
-	padding-right: 1px;
-	background-color:transparent;
-	opacity: 1;
-	filter: alpha(opacity=100);
-	-moz-opacity: 1;
-	-khtml-opacity:1;
-}
-#navtext img{
-	display: block;
-	margin: auto;
-}
 #post{
 	padding: 15px 0px 15px 0px;
 	border-bottom: dotted;
@@ -135,7 +135,7 @@ img{
 	padding: 15px 0px 15px 0px;
 	border-bottom: dotted;
 }
-input, textarea {
+input, textarea{
 	margin-right: 5px;
 	padding: 9px;
 	border: solid 1px #E5E5E5;
@@ -146,13 +146,13 @@ input, textarea {
 	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
 	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
 	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-	}
+}
 input:hover, textarea:hover,
-input:focus, textarea:focus {
+input:focus, textarea:focus{
 	border-color: #C9C9C9;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
-	}
-.submit input {
+}
+.submit input{
 	width: auto;
 	padding: 9px 15px;
 	background: #617798;
@@ -161,4 +161,4 @@ input:focus, textarea:focus {
 	color: #FFFFFF;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	}
+}

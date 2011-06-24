@@ -10,62 +10,6 @@
 */
 
 /*
-| Settings for the Blog page
-*/
-// Enter the full URL to your blog - include the http://
-$config['my_blog_url'] = '';
-// Enter the full RSS URL for your blog - include the http://
-$config['blog_rss_url'] = '';
-
-/*
-| Settings for the Bookmarks page
-*/
-// Enter the full URL to your delicious profile page - include the http://
-$config['delicious_url'] = '';
-// Enter the full RSS URL for your delicious feed - include the http://
-$config['delicious_rss_url'] = '';
-
-/*
-| Settings for the Contact page
-*/
-// Enter the email address you'd like to receive messages at
-$config['email_address'] = '';
-// Enter the subject you'd like the message to use (optional)
-$config['email_subject'] = 'Contact From Site';
-// Paste in your code to include Google Voice (optional)
-$config['google_voice_code'] = '';
-// Enter your SMTP hostname - if you're using a Google account, it's ssl://smtp.googlemail.com
-$config['email_settings']['smtp_host'] = "";
-// Enter the username to send email from the contact form - if you're using a Google account, it's username@domain
-$config['email_settings']['smtp_user'] = "";
-// Enter the password for the account noted above
-$config['email_settings']['smtp_pass'] = "";
-// Do not change this
-$config['email_settings']['protocol'] = "smtp";
-// Do not change this
-$config['email_settings']['_smtp_auth']   = TRUE;
-// Do not change this
-$config['email_settings']['smtp_port'] = 465;
-// Do not change this
-$config['email_settings']['wordwrap'] = FALSE;
-// Do not change this
-$config['email_settings']['mailtype'] = "text";
-// Do not change this
-$config['email_settings']['priority'] = 3;
-// Do not change this
-$config['email_settings']['newline'] = "\r\n";
-
-/*
-| Settings for the Foursquare page
-*/
-// Enter your Foursquare username
-$config['foursquare_username'] = "";
-// Enter your Foursquare password
-$config['foursquare_password'] = "";
-// Do not change this
-$config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";	
-
-/*
 | General settings used throughout the site
 */
 // Enter your full name
@@ -88,16 +32,74 @@ $config['apture_code'] = '';
 $config['olark_code'] = '';
 
 /*
+| Settings for the Blog page
+*/
+// Enable (1) or Disable (0) this feature
+$config['blog_enabled'] = 0;
+// Enter the full URL to your blog - include the http://
+$config['my_blog_url'] = '';
+// Enter the full RSS URL for your blog - include the http://
+$config['blog_rss_url'] = '';
+
+/*
+| Settings for the Bookmarks page
+*/
+// Enable (1) or Disable (0) this feature
+$config['delicious_enabled'] = 0;
+// Enter the full URL to your delicious profile page - include the http://
+$config['delicious_url'] = '';
+// Enter the full RSS URL for your delicious feed - include the http://
+$config['delicious_rss_url'] = '';
+
+/*
+| Settings for the Contact page
+*/
+// Enable (1) or Disable (0) this feature
+$config['contactpage_enabled'] = 0;
+// Enter the email address you'd like to receive messages at
+$config['email_address'] = '';
+// Enter the subject you'd like the message to use (optional)
+$config['email_subject'] = 'Contact From Site';
+// Paste in your code to include Google Voice (optional)
+$config['google_voice_code'] = '';
+// Enter your SMTP hostname - if you're using a Google account, it's ssl://smtp.googlemail.com
+$config['email_settings']['smtp_host'] = "";
+// Enter the username to send email from the contact form - if you're using a Google account, it's username@domain
+$config['email_settings']['smtp_user'] = "";
+// Enter the password for the account noted above
+$config['email_settings']['smtp_pass'] = "";
+
+/*
+| Settings for the Foursquare page
+*/
+// Enable (1) or Disable (0) this feature
+$config['foursquare_enabled'] = 0;
+// Enter your Foursquare username
+$config['foursquare_username'] = "";
+// Enter your Foursquare password
+$config['foursquare_password'] = "";
+// Do not change this
+$config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";	
+
+/*
 | Settings for the Last.FM Page
 */
+// Enable (1) or Disable (0) this feature
+$config['lastfm_enabled'] = 0;
 // Enter your Last.FM username
 $config['lastfm_username'] = '';
-// Do not change this
-$config['lastfm_url'] = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=".$config['lastfm_username']."&period=7day&api_key=b25b959554ed76058ac220b7b2e0a026";	
+
+/*
+| Settings for the Projects Page
+*/
+// Enable (1) or Disable (0) this feature
+$config['projects_enabled'] = 0;
 
 /*
 | Settings for the Twitter Page
 */
+// Enable (1) or Disable (0) this feature
+$config['twitter_enabled'] = 0;
 // Enter your Twitter consumer key
 $config['twitter_consumer_key'] = "";
 // Enter your Twitter consumer key secret
@@ -108,21 +110,28 @@ $config['twitter_access_token'] = "";
 $config['twitter_access_token_secret'] = "";
 // Enter your Twitter user name
 $config['my_twitter_username'] = '';
-// Do not change this
+
+/*
+| Constants - Do not change these
+*/
+// For Contact
+$config['email_settings']['protocol'] = "smtp";
+$config['email_settings']['_smtp_auth']   = TRUE;
+$config['email_settings']['smtp_port'] = 465;
+$config['email_settings']['wordwrap'] = FALSE;
+$config['email_settings']['mailtype'] = "text";
+$config['email_settings']['priority'] = 3;
+$config['email_settings']['newline'] = "\r\n";
+// For Last.FM
+$config['lastfm_url'] = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=".$config['lastfm_username']."&period=7day&api_key=b25b959554ed76058ac220b7b2e0a026";	
+// For Twitter
 $config['patterns'][0]='/((?:http|https|ftp):\/\/(?:[A-Z0-9][A-Z0-9_-]*(?:\.[A-Z0-9][A-Z0-9_-]*)+):?(\d+)?\/?[^\s\"\']+)/i';
-// Do not change this
 $config['patterns'][1]='/(@([a-zA-Z0-9]+))/i';
-// Do not change this
 $config['patterns'][2]='/(#([a-zA-Z0-9]+))/i';
-// Do not change this
 $config['patterns'][3]='/Йув/i';
-// Do not change this
 $config['replacements'][0]='<a href="$1" rel="nofollow" target="blank">$1</a>';
-// Do not change this
 $config['replacements'][1]='<a href="http://www.twitter.com/$2" rel="nofollow" target="blank">@$2</a>';
-// Do not change this
 $config['replacements'][2]='<a href="http://search.twitter.com/search?q=%23$2" rel="nofollow" target="blank">#$2</a>';
-// Do not change this
 $config['replacements'][3]='к';
 
 /*
