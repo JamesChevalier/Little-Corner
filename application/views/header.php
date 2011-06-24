@@ -8,7 +8,7 @@
 		<meta name="description" content="<?php echo $this->config->item('site_description'); ?>"/>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', '<?php echo $this->config->item('site_googlean_alytics_code'); ?>']);
+			_gaq.push(['_setAccount', '<?php echo $this->config->item('site_google_alytics_code'); ?>']);
 			_gaq.push(['_trackPageview']);
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

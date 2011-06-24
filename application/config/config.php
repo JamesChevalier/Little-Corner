@@ -79,7 +79,7 @@ $config['site_keywords'] = '';
 // Enter the site description (optional, if you want it different from your short description)
 $config['site_description'] = $config['short_description'];
 // Enter your Google Analytics code (in the format UA-#######-#)
-$config['googlean_alytics_code'] = '';
+$config['site_google_alytics_code'] = '';
 // Enter the URL for the photo used on the left navigation pane
 $config['site_avatar'] = '';
 // Enter your Apture code (optional)

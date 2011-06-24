@@ -35,32 +35,39 @@ h2{
 img{
 	border: none;
 }
-#badges{
-	text-align: left;
-}
-#badges a:hover {
-	color: #2c2c29;
-	text-decoration: none;
-	background-color: transparent;
-	border-color: transparent;
-}
-#content{
+#container
+{
 	float: right;
 	margin-top:20px;
 	margin-right:20px;
+	padding:20px;
 	max-width: 700px;
-	padding:10px;
-	overflow:hidden;
-	background: transparent url(/resources/images/black70.png);
-	background: rgba(0, 0, 0, 0.5) none;
+	color:#FFFFFF;
+	position:relative;
+	margin-left:20px;
+}
+#container .transparency
+{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity:0.7;
+	background-color:#000000;
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
 	-moz-border-radius: 12px;
 	-webkit-border-radius: 12px;
 	border-radius: 12px;
 }
-#lastfm{
+.content
+{
+	position:relative;
 	text-align: left;
 }
-#lastfm a:hover{
+.content a:hover {
 	color: #2c2c29;
 	text-decoration: none;
 	background-color: transparent;
@@ -71,22 +78,22 @@ img{
 	top:100px;
 	left:50px;
 	width:300px;
-	height:350px;
+	height:400px;
 }
 #navbg{
 	position: fixed;
 	top:100px;
 	left:50px;
 	width:300px;
-	height:350px;
+	height:400px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 	-webkit-border-radius: 15px;
 	background-color: black;
-	filter:alpha(opacity=60);
-	opacity: 0.6;
-	-moz-opacity: 0.6;
-	-khtml-opacity:0.6;
+	filter:alpha(opacity=70);
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	-khtml-opacity:0.7;
 }
 #navlist{
 	padding: 0 0.25px 0.25px;
@@ -128,8 +135,6 @@ img{
 	padding: 15px 0px 15px 0px;
 	border-bottom: dotted;
 }
-
-
 input, textarea {
 	margin-right: 5px;
 	padding: 9px;

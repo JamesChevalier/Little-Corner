@@ -1,5 +1,6 @@
-		<div id="content">
-			<div id="contact">
+		<div id="container">
+			<div class="transparency"></div>
+			<div class="content">
 				<h1>Contact</h1>
 				<?php echo $this->config->item('google_voice_code'); ?>
 				<p>

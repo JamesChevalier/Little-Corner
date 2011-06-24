@@ -2,7 +2,7 @@
 
 Little Corner is a drop-in PHP site that provides your own personal hub-type website that automatically pulls information in from many mainstream sites and services.  The site is built on CodeIgniter (2.0.2), which is included in the project.
 
-This is an early release, so there's still a lot of customization that hasn't been added in yet & everything is still quite hard-coded into the site itself.
+There's still a lot of customization that hasn't been added in yet, so the pre-requisites are pretty specific.
 
 
 === Pre-requisites
@@ -15,6 +15,12 @@ This is an early release, so there's still a lot of customization that hasn't be
 * A Blog that provides an RSS feed
 * A web server (eg; Apache)
 
+
+=== Optional Features
+
+* An Apture account
+* An Olark account
+* A Google Voice account
 
 === Configuration
 
