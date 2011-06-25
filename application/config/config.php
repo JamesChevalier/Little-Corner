@@ -13,9 +13,11 @@
 | General settings used throughout the site
 */
 // Enter your full name
-$config['my_name'] = '';
+$config['my_name'] = "";
+// Enter your email addres - this is used for the Gravatar displayed on the main page as well as your contact address
+$config['site_email'] = "";
 // Enter a short description of yourself, to be used in the left navigation pane
-$config['short_description'] = '';
+$config['short_description'] = "";
 // Enter the site title (optional, if you want it different from your name)
 $config['site_title'] = $config['my_name'];
 // Enter a comma-separated list of keywoards for your site
@@ -24,8 +26,6 @@ $config['site_keywords'] = '';
 $config['site_description'] = $config['short_description'];
 // Enter your Google Analytics code (in the format UA-#######-#)
 $config['site_google_alytics_code'] = '';
-// Enter the URL for the photo used on the left navigation pane
-$config['site_avatar'] = '';
 // Enter your Apture code (optional)
 $config['apture_code'] = '';
 // Enter your Olark code (optional)
@@ -78,8 +78,6 @@ $config['foursquare_enabled'] = 0;
 $config['foursquare_username'] = "";
 // Enter your Foursquare password
 $config['foursquare_password'] = "";
-// Do not change this
-$config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";	
 
 /*
 | Settings for the Last.FM Page
@@ -114,6 +112,8 @@ $config['my_twitter_username'] = '';
 /*
 | Constants - Do not change these
 */
+// For Gravatar
+$config['site_avatar'] = "http://www.gravatar.com/avatar/". md5( strtolower( trim( $config['site_email'] ) ) ) ."?d=http://www.gravatar.com/avatar/00000000000000000000000000000000&s=80";
 // For Contact
 $config['email_settings']['protocol'] = "smtp";
 $config['email_settings']['_smtp_auth']   = TRUE;
@@ -122,6 +122,8 @@ $config['email_settings']['wordwrap'] = FALSE;
 $config['email_settings']['mailtype'] = "text";
 $config['email_settings']['priority'] = 3;
 $config['email_settings']['newline'] = "\r\n";
+// For Foursquare
+$config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";	
 // For Last.FM
 $config['lastfm_url'] = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=".$config['lastfm_username']."&period=7day&api_key=b25b959554ed76058ac220b7b2e0a026";	
 // For Twitter

@@ -48,6 +48,6 @@
 							echo "<li><a href=\"/lastfm\">Last.FM</a></li>";
 						}
 						?>
-					</ul>
+					</ul>			
 				</div>
 		</div>

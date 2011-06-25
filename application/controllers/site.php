@@ -72,7 +72,7 @@ class Site extends CI_Controller {
 			'message' => $this->security->xss_clean($this->input->post('message')),
 		);
 		$this->email->from($data['email'], $data['name']);
-		$this->email->to($this->config->item('email_address'));
+		$this->email->to($this->config->item('site_email'));
 		$this->email->subject($this->config->item('email_subject'));
 		$this->email->message($data['message']);
 		$this->email->send();
