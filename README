@@ -38,6 +38,7 @@ You can see it in action at http://jameschevalier.us
 
 
 === How To Enable Foursquare
+
 * Add your domain name to the 'foursquare_redirect_url' value in the /application/config/config.php file
 * Create a new Foursquare app at https://foursquare.com/oauth
 * In the /application/config/config.php file - Set the value for 'foursquare_client_id'
@@ -48,3 +49,11 @@ You can see it in action at http://jameschevalier.us
 * In the /application/config/config.php file - Set the value for 'foursquare_access_token' to the Access Token provided after clicking the link
 * In the /application/controllers/site.php file - Uncomment out the main "Foursquare Page" function
 * In the /application/controllers/site.php file - Comment the two functions below that (marked as "For Initial Auth")
+
+
+
+=== Notes
+
+* Foursquare support provided by FoursquareCodigniter library: https://github.com/dxia/FoursquareCodeigniter
+* RSS parsing support provided by RSSParser class: http://codeigniter.com/wiki/RSSParser/revision/5670/
+* Twitter support provided by CodeIgniter Twitter API Library: http://www.haughin.com/code/twitter
