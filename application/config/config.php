@@ -74,10 +74,15 @@ $config['email_settings']['smtp_pass'] = "";
 */
 // Enable (1) or Disable (0) this feature
 $config['foursquare_enabled'] = 0;
-// Enter your Foursquare username
-$config['foursquare_username'] = "";
-// Enter your Foursquare password
-$config['foursquare_password'] = "";
+// Site Client ID
+$config['foursquare_client_id'] = "";
+// Site Client Secret
+$config['foursquare_client_secret'] = "";
+// User Access Token
+$config['foursquare_access_token'] = "";
+// Redirect URL
+$config['foursquare_redirect_url'] = "http://YOURDOMAINNAMEHERE/foursquarecallback";
+
 
 /*
 | Settings for the Last.FM Page

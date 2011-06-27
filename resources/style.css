@@ -123,6 +123,10 @@ img{
 	text-decoration: none;
 	color: #ddd;
 }
+#fstip{
+	padding: 0px 0px 15px 0px;
+	border-bottom: dotted;
+}
 #post{
 	padding: 15px 0px 15px 0px;
 	border-bottom: dotted;
