@@ -21,15 +21,15 @@ $config['short_description'] = "";
 // Enter the site title (optional, if you want it different from your name)
 $config['site_title'] = $config['my_name'];
 // Enter a comma-separated list of keywoards for your site
-$config['site_keywords'] = '';
+$config['site_keywords'] = "";
 // Enter the site description (optional, if you want it different from your short description)
 $config['site_description'] = $config['short_description'];
 // Enter your Google Analytics code (in the format UA-#######-#)
-$config['site_google_alytics_code'] = '';
+$config['site_google_alytics_code'] = "";
 // Enter your Apture code (optional)
 $config['apture_code'] = '';
 // Enter your Olark code (optional)
-$config['olark_code'] = '';
+$config['olark_code'] = "";
 
 /*
 | Settings for the Blog page
@@ -37,9 +37,9 @@ $config['olark_code'] = '';
 // Enable (1) or Disable (0) this feature
 $config['blog_enabled'] = 0;
 // Enter the full URL to your blog - include the http://
-$config['my_blog_url'] = '';
+$config['my_blog_url'] = "";
 // Enter the full RSS URL for your blog - include the http://
-$config['blog_rss_url'] = '';
+$config['blog_rss_url'] = "";
 
 /*
 | Settings for the Bookmarks page
@@ -47,9 +47,9 @@ $config['blog_rss_url'] = '';
 // Enable (1) or Disable (0) this feature
 $config['delicious_enabled'] = 0;
 // Enter the full URL to your delicious profile page - include the http://
-$config['delicious_url'] = '';
+$config['delicious_url'] = "";
 // Enter the full RSS URL for your delicious feed - include the http://
-$config['delicious_rss_url'] = '';
+$config['delicious_rss_url'] = "";
 
 /*
 | Settings for the Contact page
@@ -57,9 +57,9 @@ $config['delicious_rss_url'] = '';
 // Enable (1) or Disable (0) this feature
 $config['contactpage_enabled'] = 0;
 // Enter the email address you'd like to receive messages at
-$config['email_address'] = '';
+$config['email_address'] = "";
 // Enter the subject you'd like the message to use (optional)
-$config['email_subject'] = 'Contact From Site';
+$config['email_subject'] = "Contact From Site";
 // Paste in your code to include Google Voice (optional)
 $config['google_voice_code'] = '';
 // Enter your SMTP hostname - if you're using a Google account, it's ssl://smtp.googlemail.com
@@ -83,6 +83,21 @@ $config['foursquare_access_token'] = "";
 // Redirect URL
 $config['foursquare_redirect_url'] = "http://YOURDOMAINNAMEHERE/foursquarecallback";
 
+/*
+| Settings for the Instagram page
+*/
+// Enable (1) or Disable (0) this feature
+$config['instagram_enabled'] = 0;
+// Enter your Instagram application's Client ID
+$config['instagram_client_id']		= "";
+// Enter your Instagram application's Client Secret
+$config['instagram_client_secret']	= "";
+// Enter your Instagram Access Token
+$config['instagram_access_token']	= "";
+// Enter your Instagram application's Website domain
+$config['instagram_redirect_uri']	= "http://YOURDOMAINNAMEHERE/instagramcallback";
+// Enter your Instagram application's Website URL
+$config['instagram_website']		= "";
 
 /*
 | Settings for the Last.FM Page
@@ -90,7 +105,7 @@ $config['foursquare_redirect_url'] = "http://YOURDOMAINNAMEHERE/foursquarecallba
 // Enable (1) or Disable (0) this feature
 $config['lastfm_enabled'] = 0;
 // Enter your Last.FM username
-$config['lastfm_username'] = '';
+$config['lastfm_username'] = "";
 
 /*
 | Settings for the Projects Page
@@ -112,13 +127,11 @@ $config['twitter_access_token'] = "";
 // Enter your Twitter access token
 $config['twitter_access_token_secret'] = "";
 // Enter your Twitter user name
-$config['my_twitter_username'] = '';
+$config['my_twitter_username'] = "";
 
 /*
 | Constants - Do not change these
 */
-// For Gravatar
-$config['site_avatar'] = "http://www.gravatar.com/avatar/". md5( strtolower( trim( $config['site_email'] ) ) ) ."?d=http://www.gravatar.com/avatar/00000000000000000000000000000000&s=80";
 // For Contact
 $config['email_settings']['protocol'] = "smtp";
 $config['email_settings']['_smtp_auth']   = TRUE;
@@ -129,6 +142,11 @@ $config['email_settings']['priority'] = 3;
 $config['email_settings']['newline'] = "\r\n";
 // For Foursquare
 $config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";	
+// For Gravatar
+$config['site_avatar'] = "http://www.gravatar.com/avatar/". md5( strtolower( trim( $config['site_email'] ) ) ) ."?d=http://www.gravatar.com/avatar/00000000000000000000000000000000&s=80";
+// For Instagram
+$config['instagram_client_name']	= "Little Corner";
+$config['instagram_description']	= "Little Corner is an open source drop-in website that is used to pull your entire web presence into one place.";
 // For Last.FM
 $config['lastfm_url'] = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=".$config['lastfm_username']."&period=7day&api_key=b25b959554ed76058ac220b7b2e0a026";	
 // For Twitter

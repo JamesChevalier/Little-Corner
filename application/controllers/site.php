@@ -95,8 +95,46 @@ class Site extends CI_Controller {
         // you can store $token->access_token in your database
         $fsObj->setAccessToken($token->access_token);
 
-        echo "<p>Access Token to store as $config['foursquare_access_token'] in config.php: ".$token->access_token."</p>";
+        echo "Copy the next line of text into the value for $config['foursquare_access_token'] in the application/config/config.php file:<br>".$token->access_token;
     }
+*/
+
+	// Instagram Page
+	function instagram()
+	{
+		$this->load->library('instagram_api');
+		$this->instagram_api->access_token = $this->config->item('instagram_access_token');
+		
+		$pagename = array('pagename' => 'Instagram');
+		$igdata = $this->instagram_api->getUserRecent("self");
+		$igres1 = $igdata->data;
+		$igdata2 = $this->instagram_api->getUserLikes("self");
+		$igres2 = $igdata2->data;
+
+		$igphotos = array('igphotos' => $igres1, 'iglikes' => $igres2);
+		$this->load->view('header', $pagename);
+		$this->load->view('instagram', $igphotos);
+		$this->load->view('footer');
+	}
+
+/*
+// Instagram Function for Initial Auth
+	function instagram()
+	{
+		$this->load->library('instagram_api');
+		echo "<p>Little Corner uses the Instagram API but is not endorsed or certified by Instagram.</p>";
+		echo "<a href=\"https://api.instagram.com/oauth/authorize/?client_id=".$this->config->item('instagram_client_id')."&redirect_uri=".$this->config->item('instagram_redirect_uri')."&response_type=code\">Authorize Instagram</a>";
+	}
+// Instagram Function for Initial Auth
+	function instagramcallback()
+	{
+		$this->load->library('instagram_api');
+		$this->instagram_api->access_token = $this->config->item('instagram_access_token');
+		
+		$igObj = new Instagram_api($this->config->item('instagram_client_id'), $this->config->item('instagram_client_secret'));
+		$token = $igObj->authorize($_GET['code']);
+		echo "Copy the next line of text into the value for \"instagram_access_token\" in the application/config/config.php file:<br>".$token->access_token;
+	}
 */
 
 	// Last.FM Page

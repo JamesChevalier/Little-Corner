@@ -10,12 +10,12 @@ if ($this->config->item('twitter_enabled') != 1){
 				<?php
 					for($i=0;$i<count($timeline);$i++){
 						if($timeline[$i]->in_reply_to_status_id){
-							echo "<div id=\"tweet\">".preg_replace($this->config->item('patterns'),$this->config->item('replacements'),$timeline[$i]->text)."<br>Posted by <a href=\"http://twitter.com/".$timeline[$i]->user->screen_name."\">".$timeline[$i]->user->name."</a> about <a href=\"http://twitter.com/".$this->config->item('my_twitter_username')."/status/".$timeline[$i]->id."\" rel=\"nofollow\" target=\"_blank\">".$this->myfunctions->relativeTime(strtotime($timeline[$i]->created_at))."</a> in reply to <a href=\"http://twitter.com/".$timeline[$i]->in_reply_to_screen_name."/status/".$timeline[$i]->in_reply_to_status_id."\" target=\"_blank\">".$timeline[$i]->in_reply_to_screen_name."</a></div>\n";
+							echo "<div id=\"post\"><div id=\"projlink\"><img src=\"".$timeline[$i]->user->profile_image_url."\" height=48 width=48 /></div><a href=\"http://twitter.com/".$timeline[$i]->user->screen_name."\">".$timeline[$i]->user->name."</a><br>".preg_replace($this->config->item('patterns'),$this->config->item('replacements'),$timeline[$i]->text)."<p><a href=\"http://twitter.com/".$timeline[$i]->user->screen_name."/status/".$timeline[$i]->id."\" rel=\"nofollow\" target=\"_blank\">".$this->myfunctions->relativeTime(strtotime($timeline[$i]->created_at))."</a> in reply to <a href=\"http://twitter.com/".$timeline[$i]->in_reply_to_screen_name."/status/".$timeline[$i]->in_reply_to_status_id."\" target=\"_blank\">".$timeline[$i]->in_reply_to_screen_name."</a></p></div>\n";
 						}else{
-							echo "<div id=\"tweet\">".preg_replace($this->config->item('patterns'),$this->config->item('replacements'),$timeline[$i]->text)."<br>Posted by <a href=\"http://twitter.com/".$timeline[$i]->user->screen_name."\">".$timeline[$i]->user->name."</a> about <a href=\"http://twitter.com/".$this->config->item('my_twitter_username')."/status/".$timeline[$i]->id."\" rel=\"nofollow\" target=\"_blank\">".$this->myfunctions->relativeTime(strtotime($timeline[$i]->created_at))."</a></div>\n";
+							echo "<div id=\"post\"><div id=\"projlink\"><img src=\"".$timeline[$i]->user->profile_image_url."\" height=48 width=48 /></div><a href=\"http://twitter.com/".$timeline[$i]->user->screen_name."\">".$timeline[$i]->user->name."</a><br>".preg_replace($this->config->item('patterns'),$this->config->item('replacements'),$timeline[$i]->text)."<p><a href=\"http://twitter.com/".$timeline[$i]->user->screen_name."/status/".$timeline[$i]->id."\" rel=\"nofollow\" target=\"_blank\">".$this->myfunctions->relativeTime(strtotime($timeline[$i]->created_at))."</a></p></div>\n";
 						}
 					}
 				?>
-				<p><a href="http://twitter.com/<?php echo $this->config->item('my_twitter_username'); ?>/favorites"><?php echo $this->config->item('my_name'); ?>'s favorite posts on Twitter</a></p>
+				<p><a href="http://twitter.com/<?php echo $this->config->item('my_twitter_username'); ?>/favorites"><?php echo $this->config->item('my_name'); ?>'s favorites on Twitter</a></p>
 			</div>
 		</div>

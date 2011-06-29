@@ -16,6 +16,14 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
+		<?php
+			if($pagename == "Instagram"){
+				echo "<script type=\"text/javascript\" src=\"".base_url()."resources/js/prototype.js\"></script>
+		<script type=\"text/javascript\" src=\"".base_url()."resources/js/scriptaculous.js?load=effects,builder\"></script>
+		<script type=\"text/javascript\" src=\"".base_url()."resources/js/lightbox.js\"></script>
+		<link rel=\"stylesheet\" href=\"".base_url()."resources/lightbox.css\" type=\"text/css\" media=\"screen\" />";
+			}
+		?>
 	</head>
 	<body>
 		<div id="navcontainer">
@@ -37,6 +45,9 @@
 						}
 						if ($this->config->item('delicious_enabled')==1){
 							echo "<li><a href=\"/bookmarks\">Bookmarks</a></li>";
+						}
+						if ($this->config->item('instagram_enabled')==1){
+							echo "<li><a href=\"/instagram\">Instagram</a></li>";
 						}
 						if ($this->config->item('twitter_enabled')==1){
 							echo "<li><a href=\"/twitter\">Twitter</a> (<a href=\"/favorites\">Favorites</a>)</li>";
