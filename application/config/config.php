@@ -143,7 +143,7 @@ $config['email_settings']['newline'] = "\r\n";
 // For Foursquare
 $config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";	
 // For Gravatar
-$config['site_avatar'] = "http://www.gravatar.com/avatar/". md5( strtolower( trim( $config['site_email'] ) ) ) ."?d=http://www.gravatar.com/avatar/00000000000000000000000000000000&s=80";
+$config['site_avatar'] = "http://www.gravatar.com/avatar/". md5( strtolower( trim( $config['site_email'] ) ) ) ."?d=http://robohash.org/".$config['my_name'].".png?size=80x80&set=set3";
 // For Instagram
 $config['instagram_client_name']	= "Little Corner";
 $config['instagram_description']	= "Little Corner is an open source drop-in website that is used to pull your entire web presence into one place.";
