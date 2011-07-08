@@ -6,7 +6,9 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cardo">
 		<meta name="keywords" content="<?php echo $this->config->item('site_keywords'); ?>"/>
 		<meta name="description" content="<?php echo $this->config->item('site_description'); ?>"/>
-		<script type="text/javascript">
+		<?php
+			if($this->config->item('googleanalytics_enabled') == 1){
+				echo "<script type=\"text/javascript\">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', '<?php echo $this->config->item('site_google_alytics_code'); ?>']);
 			_gaq.push(['_trackPageview']);
@@ -15,8 +17,8 @@
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
-		</script>
-		<?php
+		</script>";
+			}
 			if($pagename == "Instagram"){
 				echo "<script type=\"text/javascript\" src=\"".base_url()."resources/js/prototype.js\"></script>
 		<script type=\"text/javascript\" src=\"".base_url()."resources/js/scriptaculous.js?load=effects,builder\"></script>
@@ -57,6 +59,9 @@
 						}
 						if ($this->config->item('lastfm_enabled')==1){
 							echo "<li><a href=\"/lastfm\">Last.FM</a></li>";
+						}
+						if ($this->config->item('wikipedia_enabled')==1){
+							echo "<li><a href=\"/wikipedia\">Wikipedia</a></li>";
 						}
 						?>
 					</ul>			

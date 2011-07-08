@@ -24,12 +24,18 @@ $config['site_title'] = $config['my_name'];
 $config['site_keywords'] = "";
 // Enter the site description (optional, if you want it different from your short description)
 $config['site_description'] = $config['short_description'];
-// Enter your Google Analytics code (in the format UA-#######-#)
-$config['site_google_alytics_code'] = "";
 // Enter your Apture code (optional)
 $config['apture_code'] = '';
 // Enter your Olark code (optional)
 $config['olark_code'] = "";
+
+/*
+| Settings for Google Analytics
+*/
+// Enable (1) or Disable (0) this feature
+$config['googleanalytics_enabled'] = 0;
+// Enter your Google Analytics code (in the format UA-#######-#)
+$config['site_google_alytics_code'] = "";
 
 /*
 | Settings for the Blog page
@@ -95,7 +101,7 @@ $config['instagram_client_secret']	= "";
 // Enter your Instagram Access Token
 $config['instagram_access_token']	= "";
 // Enter your Instagram application's Website domain
-$config['instagram_redirect_uri']	= "http://YOURDOMAINNAMEHERE/instagramcallback";
+$config['instagram_redirect_uri']	= "http://YOURDOMAINNAMEHERE/instagramredirect";
 // Enter your Instagram application's Website URL
 $config['instagram_website']		= "";
 
@@ -130,6 +136,14 @@ $config['twitter_access_token_secret'] = "";
 $config['my_twitter_username'] = "";
 
 /*
+| Settings for the Wikipedia page
+*/
+// Enable (1) or Disable (0) this feature
+$config['wikipedia_enabled'] = 0;
+// Enter your Wikipedia user name
+$config['wikipedia_username'] = "";
+
+/*
 | Constants - Do not change these
 */
 // For Contact
@@ -158,6 +172,10 @@ $config['replacements'][0]='<a href="$1" rel="nofollow" target="blank">$1</a>';
 $config['replacements'][1]='<a href="http://www.twitter.com/$2" rel="nofollow" target="blank">@$2</a>';
 $config['replacements'][2]='<a href="http://search.twitter.com/search?q=%23$2" rel="nofollow" target="blank">#$2</a>';
 $config['replacements'][3]='к';
+// For Wikipedia
+$config['wikipedia_api_url'] = 'http://en.wikipedia.org/w/api.php?format=json&action=query&list=usercontribs&ucuser='.$config['wikipedia_username'];
+$config['wikipedia_url'] = 'http://en.wikipedia.org/wiki/User:'.$config['wikipedia_username'];
+$config['wikipedia_useragent'] = 'Little Corner; https://github.com/JamesChevalier/Little-Corner';
 
 /*
 |--------------------------------------------------------------------------

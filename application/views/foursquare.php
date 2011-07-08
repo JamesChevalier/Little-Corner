@@ -19,7 +19,12 @@ if ($this->config->item('foursquare_enabled') != 1){
 				<h1>Mayorships</h1>
 				<?php
 					foreach ($mayorships as $mayor) {
+						if($mayor->categories){
 							echo "<img src=\"".$mayor->categories[0]->icon."\" title=\"".$mayor->name." | ".$mayor->categories[0]->name."\" /></a>";
+						}
+						else{
+							echo "<img src=\"https://4sqstatic.s3.amazonaws.com/img/categories/none-33b92a4caa6588ff2ca5ebb868a94a3f.png\" title=\"".$mayor->name."\" /></a>";
+						}
 					}
 				?>
 		

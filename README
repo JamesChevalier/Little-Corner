@@ -7,24 +7,20 @@ The site is built on CodeIgniter (2.0.2), which is included in the project.
 You can see it in action at http://jameschevalier.us
 
 
-=== Pre-requisites
+=== Compatible Services
 
-* A Google Analytics Web Property ID (UA-#######-##)
-* A web server (eg; Apache)
-
-
-=== Optional Features
-
-* An Apture account
-* A Gravatar
-* An Olark account
-* A Twitter account
-* A Foursquare account
-* An Instagram account
-* A Last.FM account
-* A Delicious account
-* A Google Voice account
-* A Blog that provides an RSS feed
+* Apture
+* Blog (via RSS)
+* Delicious
+* Foursquare
+* Gravatar
+* Google Analytics
+* Google Voice
+* Instagram
+* Last.FM
+* Olark
+* Twitter
+* Wikipedia
 
 
 === Configuration

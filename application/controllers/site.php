@@ -123,16 +123,18 @@ class Site extends CI_Controller {
 	{
 		$this->load->library('instagram_api');
 		echo "<p>Little Corner uses the Instagram API but is not endorsed or certified by Instagram.</p>";
-		echo "<a href=\"https://api.instagram.com/oauth/authorize/?client_id=".$this->config->item('instagram_client_id')."&redirect_uri=".$this->config->item('instagram_redirect_uri')."&response_type=code\">Authorize Instagram</a>";
+		echo "<a href=\"".$this->instagram_api->instagramLogin($ig_client_id, $ig_redirect_uri)."">Authorize Instagram</a>";
 	}
 // Instagram Function for Initial Auth
-	function instagramcallback()
+	function instagramredirect()
 	{
 		$this->load->library('instagram_api');
-		$this->instagram_api->access_token = $this->config->item('instagram_access_token');
+		$ig_client_id = $this->config->item('instagram_client_id');
+		$ig_client_secret = $this->config->item('instagram_client_secret');
+		$ig_redirect_uri = $this->config->item('instagram_redirect_uri');
 		
-		$igObj = new Instagram_api($this->config->item('instagram_client_id'), $this->config->item('instagram_client_secret'));
-		$token = $igObj->authorize($_GET['code']);
+		$igObj = new Instagram_api($ig_client_id, $ig_client_secret);
+		$token = $igObj->authorize($ig_client_id, $ig_client_secret, $ig_redirect_uri, $_GET['code']);
 		echo "Copy the next line of text into the value for \"instagram_access_token\" in the application/config/config.php file:<br>".$token->access_token;
 	}
 */
@@ -212,7 +214,26 @@ class Site extends CI_Controller {
 		$this->load->view('favorites', $timeline);
 		$this->load->view('footer');
 	}
-	
+
+	// Wikipedia Page
+	function wikipedia()
+	{
+		$this->load->library('myfunctions');
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_USERAGENT, $this->config->item('wikipedia_useragent'));
+		curl_setopt($ch, CURLOPT_URL, $this->config->item('wikipedia_api_url'));
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$allcontribs = curl_exec($ch);
+		$allcontribs = json_decode($allcontribs);
+		$formattedcontribs = $allcontribs->query->usercontribs;
+		$contributions = array('contributions' => $formattedcontribs);
+		curl_close($ch);
+		$pagename = array('pagename' => 'Wikipedia');
+		$this->load->view('header', $pagename);
+		$this->load->view('wikipedia', $contributions);
+		$this->load->view('footer');
+	}
+		
 	// Placeholder Twilio Integration
 	function sms()
 	{
