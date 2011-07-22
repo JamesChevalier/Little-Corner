@@ -9,7 +9,7 @@ if ($this->config->item('instagram_enabled') != 1){
 				<h1>Recent Photos</h1>
 				<?php
 					foreach ($igphotos as $photo) {
-						if($like->caption){
+						if($photo->caption){
 							echo "<a href=\"".$photo->images->standard_resolution->url."\" rel=\"lightbox[ig]\" title=\"".htmlentities($photo->caption->text)."\"><img src=\"".$photo->images->thumbnail->url."\" title=\"".$photo->caption->text."\" border=0 /></a>";
 						}
 						else{
