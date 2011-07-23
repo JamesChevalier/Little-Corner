@@ -60,6 +60,9 @@
 						if ($this->config->item('lastfm_enabled')==1){
 							echo "<li><a href=\"/lastfm\">Last.FM</a></li>";
 						}
+						if ($this->config->item('github_enabled')==1){
+							echo "<li><a href=\"/github\">GitHub</a></li>";
+						}
 						if ($this->config->item('wikipedia_enabled')==1){
 							echo "<li><a href=\"/wikipedia\">Wikipedia</a></li>";
 						}

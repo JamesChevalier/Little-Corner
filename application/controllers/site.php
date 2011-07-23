@@ -99,6 +99,15 @@ class Site extends CI_Controller {
     }
 */
 
+	// GitHub Page
+	function github()
+	{
+		$pagename = array('pagename' => 'GitHub');
+		$this->load->view('header', $pagename);
+		$this->load->view('github');
+		$this->load->view('footer');
+	}
+
 	// Instagram Page
 	function instagram()
 	{

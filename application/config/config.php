@@ -90,6 +90,14 @@ $config['foursquare_access_token'] = "";
 $config['foursquare_redirect_url'] = "http://YOURDOMAINNAMEHERE/foursquarecallback";
 
 /*
+| Settings for the GitHub page
+*/
+// Enable (1) or Disable (0) this feature
+$config['github_enabled'] = 0;
+// Enter your GitHub username
+$config['github_username'] = "";
+
+/*
 | Settings for the Instagram page
 */
 // Enable (1) or Disable (0) this feature
@@ -155,7 +163,10 @@ $config['email_settings']['mailtype'] = "text";
 $config['email_settings']['priority'] = 3;
 $config['email_settings']['newline'] = "\r\n";
 // For Foursquare
-$config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";	
+$config['foursquare_url'] = "http://api.foursquare.com/v1/user.json?badges=1&mayor=1";
+// For GitHub
+$config['github_repos_url'] = "https://api.github.com/users/".$config['github_username']."/repos";
+$config['github_gist_url'] = "https://api.github.com/users/".$config['github_username']."/gists";
 // For Gravatar
 $config['site_avatar'] = "http://www.gravatar.com/avatar/". md5( strtolower( trim( $config['site_email'] ) ) ) ."?d=http://robohash.org/".$config['my_name'].".png?size=80x80&set=set3";
 // For Instagram
