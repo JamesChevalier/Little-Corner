@@ -26,7 +26,8 @@ You can see it in action at http://jameschevalier.us
 
 === Configuration
 
-* Copy site into place (verify presence of .htaccess file)
+* Copy the site files into the root directory
+* Verify that the .htaccess file was copied into the root directory
 * Add your own favicon.ico to the root directory
 * Add your own "bg.jpg" image to the /resources/images directory (a larger-sized image is best; something like 1920x1200 or so)
 * Add your own 'projects' images (150w x 80h) to the /resources/images directory
@@ -79,7 +80,7 @@ You can see it in action at http://jameschevalier.us
 * Foursquare support provided by FoursquareCodigniter library: https://github.com/dxia/FoursquareCodeigniter
 * RSS parsing support provided by RSSParser class: http://codeigniter.com/wiki/RSSParser/revision/5670/
 * Twitter support provided by CodeIgniter Twitter API Library: https://github.com/elliothaughin/codeigniter-twitter
-* Instagram support provided by CodeIgniter-Instagram-Library: https://github.com/ianckc/CodeIgniter-Instagram-Library
+* Instagram support provided by CodeIgniter-Instagram-Library: https://github.com/JamesChevalier/CodeIgniter-Instagram-Library
 * Your image in the navigation area is provided by Gravatar: http://gravatar.com
 * If your site's email address does not have an associated Gravatar, the default image is a robot head provided by RobotHash: http://robohash.org
 * Clicked image display is provided by Lightbox2: http://www.huddletogether.com/projects/lightbox2/

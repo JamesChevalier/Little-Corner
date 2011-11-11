@@ -24,8 +24,6 @@ $config['site_title'] = $config['my_name'];
 $config['site_keywords'] = "";
 // Enter the site description (optional, if you want it different from your short description)
 $config['site_description'] = $config['short_description'];
-// Enter your Apture code (optional)
-$config['apture_code'] = '';
 // Enter your Olark code (optional)
 $config['olark_code'] = "";
 
@@ -173,7 +171,7 @@ $config['site_avatar'] = "http://www.gravatar.com/avatar/". md5( strtolower( tri
 $config['instagram_client_name']	= "Little Corner";
 $config['instagram_description']	= "Little Corner is an open source drop-in website that is used to pull your entire web presence into one place.";
 // For Last.FM
-$config['lastfm_url'] = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=".$config['lastfm_username']."&period=7day&api_key=b25b959554ed76058ac220b7b2e0a026";	
+$config['lastfm_url'] = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=".$config['lastfm_username']."&period=7day&api_key=b25b959554ed76058ac220b7b2e0a026";
 // For Twitter
 $config['patterns'][0]='/((?:http|https|ftp):\/\/(?:[A-Z0-9][A-Z0-9_-]*(?:\.[A-Z0-9][A-Z0-9_-]*)+):?(\d+)?\/?[^\s\"\']+)/i';
 $config['patterns'][1]='/(@([a-zA-Z0-9]+))/i';
