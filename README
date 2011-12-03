@@ -2,7 +2,7 @@
 
 Little Corner is an open source drop-in website that is used to pull your entire web presence into one place.
 
-The site is built on CodeIgniter (2.0.2), which is included in the project.
+The site is built on CodeIgniter (2.1.0), which is included in the project.
 
 You can see it in action at http://jameschevalier.us
 
