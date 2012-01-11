@@ -83,12 +83,12 @@ How To Enable Instagram
 Notes
 -----
 
-* Foursquare support provided by FoursquareCodigniter library: https://github.com/dxia/FoursquareCodeigniter
-* RSS parsing support provided by RSSParser class: http://codeigniter.com/wiki/RSSParser/revision/5670/
-* Twitter support provided by CodeIgniter Twitter API Library: https://github.com/elliothaughin/codeigniter-twitter
-* Instagram support provided by CodeIgniter-Instagram-Library: https://github.com/JamesChevalier/CodeIgniter-Instagram-Library
-* Your image in the navigation area is provided by Gravatar: http://gravatar.com
-* If your site's email address does not have an associated Gravatar, the default image is a robot head provided by RobotHash: http://robohash.org
-* Clicked image display is provided by Lightbox2: http://www.huddletogether.com/projects/lightbox2/
-* cURL support provided by CodeIgniter-cURL: https://github.com/philsturgeon/codeigniter-curl
-* Some aspects of this site use Jamie Rumbelow's MY_input.php class to allow ? in CodeIgniter URLs: http://www.jamierumbelow.net
+* Foursquare support provided by [FoursquareCodigniter library](https://github.com/dxia/FoursquareCodeigniter)
+* RSS parsing support provided by [RSSParser class](http://codeigniter.com/wiki/RSSParser/revision/5670/)
+* Twitter support provided by [CodeIgniter Twitter API Library](https://github.com/elliothaughin/codeigniter-twitter)
+* Instagram support provided by [CodeIgniter-Instagram-Library](https://github.com/JamesChevalier/CodeIgniter-Instagram-Library)
+* Your image in the navigation area is provided by [Gravatar](http://gravatar.com)
+* If your site's email address does not have an associated Gravatar, the default image is a robot head provided by [RobotHash](http://robohash.org)
+* Clicked image display is provided by [Lightbox2](http://www.huddletogether.com/projects/lightbox2/)
+* cURL support provided by [CodeIgniter-cURL](https://github.com/philsturgeon/codeigniter-curl)
+* Some aspects of this site use [Jamie Rumbelow's](http://www.jamierumbelow.net) MY_input.php class to allow ? in CodeIgniter URLs
