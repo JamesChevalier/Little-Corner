@@ -36,9 +36,9 @@ class Instagram_api {
 	 */
     protected $api_urls = array(
     	'user'						=> 'https://api.instagram.com/v1/users/%s/?access_token=%s',
-        'user_feed'					=> 'https://api.instagram.com/v1/users/self/feed?access_token=%s&max_id=%d&min_id=%d&count=%d',
-        'user_recent'				=> 'https://api.instagram.com/v1/users/%s/media/recent/?access_token=%s&max_id=%d&min_id=%d&count=%d&max_timestamp=%d&min_timestamp=%d',
-        'user_likes'				=> 'https://api.instagram.com/v1/users/%s/media/liked?access_token=%s&max_id=%d&count=%d',
+        'user_feed'					=> 'https://api.instagram.com/v1/users/self/feed?access_token=%s&max_id=%c&min_id=%d&count=%d',
+        'user_recent'				=> 'https://api.instagram.com/v1/users/%s/media/recent/?access_token=%s&max_id=%c&min_id=%d&count=%d&max_timestamp=%c&min_timestamp=%d',
+        'user_likes'				=> 'https://api.instagram.com/v1/users/%s/media/liked?access_token=%s&max_like_id=%c&count=%d',
         'user_search'				=> 'https://api.instagram.com/v1/users/search?q=%s&access_token=%s&count=%d',
         'user_follows'				=> 'https://api.instagram.com/v1/users/%s/follows?access_token=%s',
         'user_followed_by'			=> 'https://api.instagram.com/v1/users/%s/followed-by?access_token=%s',
@@ -46,7 +46,7 @@ class Instagram_api {
         'user_relationship'			=> 'https://api.instagram.com/v1/users/%d/relationship?access_token=%s',
         'modify_user_relationship'	=> 'https://api.instagram.com/v1/users/%d/relationship?access_token=%s',
         'media'						=> 'https://api.instagram.com/v1/media/%d?access_token=%s',
-        'media_search'				=> 'https://api.instagram.com/v1/media/search?lat=%s&lng=%s&max_timestamp=%d&min_timestamp=%d&distance=%d&access_token=%s',
+        'media_search'				=> 'https://api.instagram.com/v1/media/search?lat=%s&lng=%s&max_timestamp=%c&min_timestamp=%d&distance=%d&access_token=%s',
         'media_popular'				=> 'https://api.instagram.com/v1/media/popular?access_token=%s',
         'media_comments'			=> 'https://api.instagram.com/v1/media/%d/comments?access_token=%s',
         'post_media_comment'		=> 'https://api.instagram.com/v1/media/%d/comments?access_token=%s',
@@ -55,10 +55,10 @@ class Instagram_api {
     	'post_like'					=> 'https://api.instagram.com/v1/media/%d/likes?access_token=%s',
         'remove_like'				=> 'https://api.instagram.com/v1/media/%d/likes?access_token=%s',
         'tags'						=> 'https://api.instagram.com/v1/tags/%s?access_token=%s',
-        'tags_recent'				=> 'https://api.instagram.com/v1/tags/%s/media/recent?max_id=%d&min_id=%d&access_token=%s',
+        'tags_recent'				=> 'https://api.instagram.com/v1/tags/%s/media/recent?max_id=%c&min_id=%d&access_token=%s',
         'tags_search'				=> 'https://api.instagram.com/v1/tags/search?q=%s&access_token=%s',
         'locations'					=> 'https://api.instagram.com/v1/locations/%d?access_token=%s',
-        'locations_recent'			=> 'https://api.instagram.com/v1/locations/%d/media/recent/?max_id=%d&min_id=%d&max_timestamp=%d&min_timestamp=%d&access_token=%s',
+        'locations_recent'			=> 'https://api.instagram.com/v1/locations/%d/media/recent/?max_id=%c&min_id=%d&max_timestamp=%c&min_timestamp=%d&access_token=%s',
         'locations_search'			=> 'https://api.instagram.com/v1/locations/search?lat=%s&lng=%s&foursquare_id=%d&foursquare_v2_id=%d&distance=%d&access_token=%s',
         'geography_endpoints'		=> 'https://api.instagram.com/v1/geographies/%d/media/recent?access_token=%s'
     );
@@ -200,15 +200,15 @@ class Instagram_api {
 
     /*
      * Function to get a users recent liked media
-     * Accepts user id (or "self"), and (optionally) max id, count
+     * Accepts user id (or "self"), and (optionally) max like id, count
      * @param string Instagram user id (or "self")
      * @param int Return media liked before this id
      * @param int Count of media to return
      * @return std_class of media found based on parameters given
      */
-    function getUserLikes($user_id, $max_id = null, $count = null) {
+    function getUserLikes($user_id, $max_like_id = null, $count = null) {
 
-    	$user_likes_request_url = sprintf($this->api_urls['user_likes'], $user_id, $this->access_token, $max_id, $count);
+    	$user_likes_request_url = sprintf($this->api_urls['user_likes'], $user_id, $this->access_token, $max_like_id, $count);
 
     	return $this->__apiCall($user_likes_request_url);
     	
