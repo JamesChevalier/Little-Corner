@@ -1,0 +1,16 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">Foursquare</h1>
+
+      <h3>Access Token</h3>
+      <p><code><%= session[:access_token] %></code></p>
+      <p>Set this Access Token as the value for FOURSQUARE_OAUTH_TOKEN within the config/environment.rb file.</p>
+
+    </div>
+  </div>
+
+</div>

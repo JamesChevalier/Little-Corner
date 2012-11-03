@@ -1,0 +1,35 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">Twitter</h1>
+
+      <h3>Tweets</h3>
+      <% @timeline.each do |t| %>
+        <p><%= auto_link(t.text) %></p>
+        <a href="http://twitter.com/<%= t.user.screen_name %>/status/<%= t.id %>" target="_blank"><span class="radius label"><%= t.created_at.strftime("%l:%M:%S %P on %B %e, %Y") %></span></a>
+        <hr>
+      <% end %>
+
+      <h3>Favorites</h3>
+      <% @favorites.each do |f| %>
+        <div style="float:left;padding-right:10px;">
+          <p>
+            <img src="<%= f.user.profile_image_url_https %>" border="0" title="<%= f.user.name %>" /><br />
+            <%= f.user.name %>
+          </p>
+        </div>
+        <div>
+          <p><a href="http://twitter.com/<%= f.user.screen_name %>/status/<%= f.id %>" target="_blank"><span class="radius label"><%= f.created_at.strftime("%l:%M:%S %P on %B %e, %Y") %></span></a><br />
+          <%= auto_link(f.text) %></p>
+        </div>
+        <hr>
+      <% end %>
+
+      <h6><a href="http://twitter.com/<%= TWITTER_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ Twitter</a></h6>
+    </div>
+  </div>
+
+</div>

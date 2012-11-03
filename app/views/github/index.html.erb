@@ -1,0 +1,30 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">GitHub</h1>
+
+      <% @github_repositories.each do |r| %>
+        <% if r['private'] == false %>
+          <a href="<%= r['url'] %>"><h4><%= r['name'] %></h4></a>
+          <p>
+            <%= raw "<span class=\"radius secondary label\">Fork</span>&nbsp;" if r['fork'] == true %>
+            <%= raw "<span class=\"radius label\">#{r['watchers_count']} watchers</span>&nbsp;" if r['watchers_count'] > 0 %>
+            <%= raw "<span class=\"radius label\">#{r['forks_count']} forks</span>&nbsp;" if r['forks_count'] > 0 %>
+            <%= raw "<span class=\"radius alert label\">#{r['open_issues']} open issues</span>&nbsp;" if r['open_issues'] > 0 %>
+            <%= raw "<a href=\"#{r['url']}\" target=\"_blank\"><span class=\"radius success label\">See it on GitHub</span></a>&nbsp;" %>
+            <%= raw "<a href=\"#{r['homepage']}\" target=\"_blank\"><span class=\"radius success label\">Go to the Homepage</span></a>" if r['homepage'] %>&nbsp;
+            <br />
+            <%= r['description'] %>
+          </p>
+          <hr>
+        <% end %>
+      <% end %>
+
+      <h6><a href="https://github.com/<%= GITHUB_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ GitHub</a></h6>
+    </div>
+  </div>
+
+</div>

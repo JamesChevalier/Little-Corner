@@ -1,0 +1,21 @@
+<div class="three mobile-four columns">
+  <div class="panel">
+    <p style="text-align:center;"><img src="<%= GRAVATAR_URL %>"></p>
+    <p><%= SITE_DESCRIPTION.html_safe %></p>
+
+    <ul class="side-nav">
+      <%= raw params[:controller] == 'home' ? "<li class=\"active\">" : "<li>" %><a href="/">Home</a></li>
+      <%= raw ENABLE_CONTACT == true ? "#{params[:controller] == 'contact' ? "<li class=\"active\">" : "<li>"}<a href=\"/contact\">Contact</a></li>" : "" %>
+      <%= raw ENABLE_BLOG == true ? "#{params[:controller] == 'blog' ? "<li class=\"active\">" : "<li>"}<a href=\"/blog\">Blog</a></li>" : "" %>
+      <%= raw ENABLE_DELICIOUS == true ? "#{params[:controller] == 'delicious' ? "<li class=\"active\">" : "<li>"}<a href=\"/delicious\">Delicious</a></li>" : "" %>
+      <%= raw ENABLE_FOURSQUARE == true ? "#{params[:controller] == 'foursquare' ? "<li class=\"active\">" : "<li>"}<a href=\"/foursquare\">Foursquare</a></li>" : "" %>
+      <%= raw ENABLE_GITHUB == true ? "#{params[:controller] == 'github' ? "<li class=\"active\">" : "<li>"}<a href=\"/github\">GitHub</a></li>" : "" %>
+      <%= raw ENABLE_INSTAGRAM == true ? "#{params[:controller] == 'instagram' ? "<li class=\"active\">" : "<li>"}<a href=\"/instagram\">Instagram</a></li>" : "" %>
+      <%= raw ENABLE_LAST_FM == true ? "#{params[:controller] == 'lastfm' ? "<li class=\"active\">" : "<li>"}<a href=\"/lastfm\">Last.FM</a></li>" : "" %>
+      <%= raw ENABLE_PROJECTS == true ? "#{params[:controller] == 'projects' ? "<li class=\"active\">" : "<li>"}<a href=\"/projects\">Projects</a></li>" : "" %>
+      <%= raw ENABLE_SOUNDCLOUD == true ? "#{params[:controller] == 'soundcloud' ? "<li class=\"active\">" : "<li>"}<a href=\"/soundcloud\">SoundCloud</a></li>" : "" %>
+      <%= raw ENABLE_TWITTER == true ? "#{params[:controller] == 'twitter' ? "<li class=\"active\">" : "<li>"}<a href=\"/twitter\">Twitter</a></li>" : "" %>
+    </ul>
+
+  </div>
+</div>

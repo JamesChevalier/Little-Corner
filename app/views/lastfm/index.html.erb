@@ -1,0 +1,20 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">Last.FM</h1>
+
+      <h3>Top Artists</h3>
+      <p style="text-align:center;">
+        <% @top_artists.each do |a| %>
+          <a href="<%= a['url'] %>" target="_blank"><img src="<%= a['image'][2]['content'] %>" title="<%= a['name'] %>"border="0" /></a>
+        <% end %>
+      </p>
+
+      <h6><a href="http://www.last.fm/user/<%= LAST_FM_USER %>" target="_blank"><%= YOUR_NAME %> @ Last.FM</a></h6>
+    </div>
+  </div>
+
+</div>

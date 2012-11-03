@@ -1,94 +1,127 @@
 Little Corner
 =============
 
-Little Corner is an open source drop-in website that is used to pull your entire web presence into one place.
-
-The site is built on CodeIgniter (2.1.0), which is included in the project.
-
-You can see it in action at http://jameschevalier.us
-
+Little Corner is a website that is used to pull your entire web presence into one place. It runs on Ruby on Rails without a database, and is Heroku-ready. You can see it in action at http://jameschevalier.us
 
 Compatible Services
 -------------------
 
-* Apture
 * Blog (via RSS)
 * Delicious
 * Foursquare
 * GitHub
-* Gravatar
 * Google Analytics
-* Google Voice
+* Gravatar
 * Instagram
 * Last.FM
-* Olark
+* Soundcloud
 * Twitter
-* Wikipedia
 
-
-Configuration
+How To Get It Going
 -------------
 
-* Copy the site files into the root directory
-* Verify that the .htaccess file was copied into the root directory
-* Add your own favicon.ico to the root directory
-* Add your own "bg.jpg" image to the /resources/images directory (a larger-sized image is best; something like 1920x1200 or so)
-* Add your own 'projects' images (150w x 80h) to the /resources/images directory
-* In the `/application/config/config.php` file - You will need to fill out the entire "Custom Site Configuration" section (unless a setting is noted as optional or not-to-be-touched)
-* In the `/application/config/config.php` file - Each of the services that you want to enable will need to be set to 1
-* In the `/application/config/config.php` file - Edit the $config['base_url'] line
-* Edit the /application/views/projects.php file accordingly
+###Get the code
+1. Open Terminal
+2. Copy Little-Corner locally with `git clone git@github.com:JamesChevalier/Little-Corner.git`
+3. Change directory into Little-Corner with `cd Little-Corner`
 
+###Complete initial configuration
+1. Edit `config/environment.rb` as completely as possible
+2. Replace `public/favicon.ico` with your own favicon
+3. Replace `/app/assets/images/bg.jpg` with your own background image
+ * Make sure your background image has the same filename
+ * A larger-sized image is best; something like 1920x1200, or 1280x800
+4. Add your own `projects` images (150w x 80h) to the `/app/assets/images` directory
+5. Edit `app/views/projects/index.html.erb` to add your projects
 
-How To Enable Foursquare
-------------------------
+###Deploy initial version
+1. Commit your configuration changes with `git add .; git commit -m "Update Config"`
+2. Create your Heroku app with `heroku create`
+3. Deploy Little-Corner to Heroku with `git push heroku master`
 
-* Add your domain name to the 'foursquare_redirect_url' value in the `/application/config/config.php` file
-* Create a new Foursquare app at https://foursquare.com/oauth
-* In the `/application/config/config.php` file - Enable Foursquare by setting the value for 'foursquare_enabled' to 1
-* In the `/application/config/config.php` file - Set the value for 'foursquare_client_id'
-* In the `/application/config/config.php` file - Set the value for 'foursquare_client_secret'
-* In the `/application/controllers/site.php` file - Comment out the existing "Foursquare Page" function
-* In the `/application/controllers/site.php` file - Uncomment the two functions below that (marked as "For Initial Auth")
-* Go to http://SITEADDRESS/foursquare in your browser & click the link
-* In the `/application/config/config.php` file - Set the value for 'foursquare_access_token' to the Access Token provided after clicking the link
-* In the `/application/controllers/site.php` file - Uncomment out the main "Foursquare Page" function
-* In the `/application/controllers/site.php` file - Comment the two functions below that (marked as "For Initial Auth")
+###Configure individual services
 
+The sections below describe how to enable each individual service. Some of the steps in each section might duplicate steps you completed in the `Complete initial configuration`, above. If you aren't enabling one of them, just skip that section.
 
-How To Enable Instagram
------------------------
+####Foursquare
+
+* Register your application at https://foursquare.com/developers/apps
+ * Set the Name of your app to "Little-Corner" (or something similar, if they require unique names)
+ * Set Download / welcome page url to your website's location
+ * Set Callback URL to "http://YOURDOMAIN/foursquare/callback"
+ * Check the box for Web Connect Support
+* Edit the `/config/environment.rb` file:
+ * Set the value for `ENABLE_FOURSQUARE` to true
+ * Set the value for `FOURSQUARE_CLIENT_ID`
+ * Set the value for `FOURSQUARE_CLIENT_SECRET`
+ * Set the value for `FOURSQUARE_USER_NAME` to your user name
+* Commit your changes with `git add .; git commit -m "Configure Foursquare"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
+* Go to http://YOURDOMAIN/foursquare/connect in your browser
+* Edit the `/config/environment.rb` file: 
+ * Set the value for `FOURSQUARE_OAUTH_TOKEN`
+* Commit your changes with `git add .; git commit -m "Configure Foursquare"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
+
+####Instagram
 
 * Register for Developer access at http://instagr.am/developer/register/
 * Register your application at http://instagr.am/developer/manage/
-- Set Application Name to "Little Corner"
-- Set Description to "Little Corner is an open source drop-in website that is used to pull your entire web presence into one place."
-- Set Website to your website's location
-- Set OAuth redirect_uri to "http://YourWebSiteLocation/instagramcallback"
-* In the `/application/config/config.php` file - Enable Instagram by setting the value for 'instagram_enabled' to 1
-* In the `/application/config/config.php` file - Set the value for 'instagram_client_name' to "Little Corner"
-* In the `/application/config/config.php` file - Set the value for 'instagram_client_id'
-* In the `/application/config/config.php` file - Set the value for 'instagram_client_secret'
-* In the `/application/config/config.php` file - Set the value for 'instagram_redirect_uri' to the same location you provided Instagram
-* In the `/application/config/config.php` file - Set the value for 'instagram_website' to the same website location you provided Instagram
-* In the `/application/config/config.php` file - Set the value for 'instagram_description' to the same description you provided Instagram
-* In the `/application/controllers/site.php` file - Comment out the existing "Instagram Page" function
-* In the `/application/controllers/site.php` file - Uncomment the two functions below that (marked as "For Initial Auth")
-* Go to http://SITEADDRESS/instagram in your browser & click the link
-* In the `/application/config/config.php` file - Set the value for 'instagram_access_token' to the Access Token provided after clicking the link
-* In the `/application/controllers/site.php` file - Uncomment out the main "Instagram Page" function
-* In the `/application/controllers/site.php` file - Comment the two functions below that (marked as "For Initial Auth")
+ * Set Application Name to "Little Corner"
+ * Set Description to "Little Corner pulls your entire web presence into one place."
+ * Set Website to your website's location
+ * Set OAuth redirect_uri to "http://YOURDOMAIN/instagram/callback"
+* Edit the `/config/environment.rb` file:
+ * Enable Instagram by setting the value for `ENABLE_INSTAGRAM` to 1
+ * Set the value for `INSTAGRAM_CLIENT_ID`
+ * Set the value for `INSTAGRAM_CLIENT_SECRET`
+* Commit your changes with `git add .; git commit -m "Configure Instagram"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
+* Open http://YOURDOMAIN/instagram/connect in your browser
+* Edit the `/config/environment.rb` file:
+ * Set the value for `INSTAGRAM_ACCESS_TOKEN` to the Access Token provided
+* Commit your changes with `git add .; git commit -m "Configure Instagram"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
 
+####Last.FM
 
-Notes
------
+* Register your application at http://www.last.fm/api/accounts
+ * Set the Application/Device Name to "Little-Corner" (or something similar, if they require unique names)
+ * Set the Application Description to "My instance of Little-Corner"
+ * Set the Application Homepage to your website's location
+ * You don't need to fill out the rest of the form
+* Edit the `/config/environment.rb` file:
+ * Set the value for `ENABLE_LAST_FM` to true
+ * Set the value for `LAST_FM_USER` to your user name
+ * Set the value for `LAST_FM_API_KEY`
+ * Set the value for `LAST_FM_API_SECRET`
+* Commit your changes with `git add .; git commit -m "Configure Last.FM"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
 
-* Foursquare support provided by [FoursquareCodigniter library](https://github.com/dxia/FoursquareCodeigniter)
-* RSS parsing support provided by [RSSParser class](http://codeigniter.com/wiki/RSSParser/revision/5670/)
-* Twitter support provided by [CodeIgniter Twitter API Library](https://github.com/elliothaughin/codeigniter-twitter)
-* Instagram support provided by [CodeIgniter-Instagram-Library](https://github.com/JamesChevalier/CodeIgniter-Instagram-Library)
-* Your image in the navigation area is provided by [Gravatar](http://gravatar.com)
-* If your site's email address does not have an associated Gravatar, the default image is a robot head provided by [RobotHash](http://robohash.org)
-* Clicked image display is provided by [Lightbox2](http://www.huddletogether.com/projects/lightbox2/)
-* cURL support provided by [CodeIgniter-cURL](https://github.com/philsturgeon/codeigniter-curl)
-* Some aspects of this site use [Jamie Rumbelow's](http://www.jamierumbelow.net) MY_input.php class to allow ? in CodeIgniter URLs
+####Soundcloud
+
+* Register your application at http://soundcloud.com/you/apps
+ * Set the Title of your app to "Little-Corner" (or something similar, if they require unique names)
+* Edit the `/config/environment.rb` file:
+ * Set the value for `ENABLE_SOUNDCLOUD` to true
+ * Set the value for `SOUNDCLOUD_CLIENT_ID`
+ * Set the value for `SOUNDCLOUD_USER_NAME` to your user name
+* Commit your changes with `git add .; git commit -m "Configure Soundcloud"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
+
+####Twitter
+
+* Register your application at https://dev.twitter.com/apps
+ * Set the Name of your app to "Little-Corner" (or something similar, if they require unique names)
+ * Set the Description of your app to "Little Corner pulls your entire web presence into one place."
+ * Set Website to your website's location
+ * Set Callback URL to "http://YOURDOMAIN/twitter/callback"
+* Edit the `/config/environment.rb` file:
+ * Set the value for `ENABLE_TWITTER` to true
+ * Set the value for `TWITTER_CONSUMER_KEY`
+ * Set the value for `TWITTER_CONSUMER_SECRET`
+ * Set the value for `TWITTER_ACCESS_TOKEN`
+ * Set the value for `TWITTER_ACCESS_TOKEN_SECRET`
+ * Set the value for `TWITTER_USER_NAME` to your user name
+* Commit your changes with `git add .; git commit -m "Configure Twitter"`
+* Deploy Little-Corner to Heroku with `git push heroku master`

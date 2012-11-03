@@ -1,0 +1,24 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">Delicious</h1>
+
+      <% @feed.entries.each do |f| %>
+        <span class="secondary radius label"><%= f.published.strftime("%B %e, %Y") %></span>
+        <h4><a href="<%= f.url %>" target="_blank"><%= f.title %></a></h4>
+        <p style="text-align:right;">
+          <% f.categories.each do |c| %>
+            <a href="http://www.delicious.com/<%= DELICIOUS_USER_NAME %>/<%= c %>" target="_blank"><span class="radius label"><%= c %></span></a>
+          <% end %>
+        </p>
+        <hr>
+      <% end %>
+
+      <h6><a href="http://www.delicious.com/<%= DELICIOUS_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ Delicious</a></h6>
+    </div>
+  </div>
+
+</div>

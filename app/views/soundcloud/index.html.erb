@@ -1,0 +1,18 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">SoundCloud</h1>
+
+      <% @soundcloud.each do |s| %>
+        <%= raw s %>
+        <hr>
+      <% end %>
+
+      <h6><a href="https://soundcloud.com/<%= SOUNDCLOUD_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ SoundCloud</a></h6>
+    </div>
+  </div>
+
+</div>

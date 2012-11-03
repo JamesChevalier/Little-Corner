@@ -1,0 +1,20 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+
+      <h1 style="text-align:center;">Blog</h1>
+      <% @feed.entries.each do |f| %>
+        <span class="secondary radius label"><%= f.published.strftime("%B %e, %Y") %></span>
+        <h4><a href="<%= f.url %>" target="_blank"><%= f.title %></a></h4>
+        <hr>
+      <% end %>
+
+      <h6><a href="<%= BLOG_URL %>" target="_blank"><%= YOUR_NAME %> @ The Blog</a>&nbsp;<a href="<%= BLOG_FEED_URL %>" target="_blank"><img src="/assets/rss.png" border="0" /></a></h6>
+
+    </div>
+  </div>
+
+</div>
