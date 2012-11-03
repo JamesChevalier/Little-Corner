@@ -1,7 +1,7 @@
 Little Corner
 =============
 
-Little Corner is a website that is used to pull your entire web presence into one place. It runs on Ruby on Rails without a database, and is Heroku-ready. You can see it in action at http://jameschevalier.us
+Little Corner is a website that is used to pull your entire web presence into one place. It runs on Ruby on Rails, doesn't use a database, and is Heroku-ready. You can see it in action at http://jameschevalier.us
 
 Compatible Services
 -------------------
@@ -58,7 +58,7 @@ The sections below describe how to enable each individual service. Some of the s
 * Commit your changes with `git add .; git commit -m "Configure Foursquare"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
 * Go to http://YOURDOMAIN/foursquare/connect in your browser
-* Edit the `/config/environment.rb` file: 
+* Edit the `/config/environment.rb` file:
  * Set the value for `FOURSQUARE_OAUTH_TOKEN`
 * Commit your changes with `git add .; git commit -m "Configure Foursquare"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
