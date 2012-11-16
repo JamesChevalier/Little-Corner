@@ -15,17 +15,18 @@ Compatible Services
 * Instagram
 * Last.FM
 * Soundcloud
+* Tumblr
 * Twitter
 
 How To Get It Going
 -------------
 
-###Get the code
+### Get the code
 1. Open Terminal
 2. Copy Little-Corner locally with `git clone git@github.com:JamesChevalier/Little-Corner.git`
 3. Change directory into Little-Corner with `cd Little-Corner`
 
-###Complete initial configuration
+### Complete initial configuration
 1. Edit `config/environment.rb` as completely as possible
 2. Replace `public/favicon.ico` with your own favicon
 3. Replace `/app/assets/images/bg.jpg` with your own background image
@@ -34,16 +35,17 @@ How To Get It Going
 4. Add your own `projects` images (150w x 80h) to the `/app/assets/images` directory
 5. Edit `app/views/projects/index.html.erb` to add your projects
 
-###Deploy initial version
+### Deploy initial version
 1. Commit your configuration changes with `git add .; git commit -m "Update Config"`
 2. Create your Heroku app with `heroku create`
 3. Deploy Little-Corner to Heroku with `git push heroku master`
 
-###Configure individual services
+### Configure individual services
 
 The sections below describe how to enable each individual service. Some of the steps in each section might duplicate steps you completed in the `Complete initial configuration`, above. If you aren't enabling one of them, just skip that section.
 
-####Foursquare
+
+#### Foursquare
 
 * Register your application at https://foursquare.com/developers/apps
  * Set the Name of your app to "Little-Corner" (or something similar, if they require unique names)
@@ -63,7 +65,8 @@ The sections below describe how to enable each individual service. Some of the s
 * Commit your changes with `git add .; git commit -m "Configure Foursquare"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
 
-####Instagram
+
+#### Instagram
 
 * Register for Developer access at http://instagr.am/developer/register/
 * Register your application at http://instagr.am/developer/manage/
@@ -83,7 +86,8 @@ The sections below describe how to enable each individual service. Some of the s
 * Commit your changes with `git add .; git commit -m "Configure Instagram"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
 
-####Last.FM
+
+#### Last.FM
 
 * Register your application at http://www.last.fm/api/accounts
  * Set the Application/Device Name to "Little-Corner" (or something similar, if they require unique names)
@@ -98,7 +102,8 @@ The sections below describe how to enable each individual service. Some of the s
 * Commit your changes with `git add .; git commit -m "Configure Last.FM"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
 
-####Soundcloud
+
+#### Soundcloud
 
 * Register your application at http://soundcloud.com/you/apps
  * Set the Title of your app to "Little-Corner" (or something similar, if they require unique names)
@@ -109,7 +114,13 @@ The sections below describe how to enable each individual service. Some of the s
 * Commit your changes with `git add .; git commit -m "Configure Soundcloud"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
 
-####Twitter
+
+#### Tumblr
+
+* Register your application at http://www.tumblr.com/oauth/apps
+
+
+#### Twitter
 
 * Register your application at https://dev.twitter.com/apps
  * Set the Name of your app to "Little-Corner" (or something similar, if they require unique names)
