@@ -89,7 +89,7 @@ GEM
     json (1.7.5)
     jwt (0.1.5)
       multi_json (>= 1.0)
-    lastfm (1.13.0)
+    lastfm (1.13.1)
       activesupport (>= 3.0.3)
       httparty
       xml-simple
