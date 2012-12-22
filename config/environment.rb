@@ -72,6 +72,7 @@ TWITTER_USER_NAME            = ""
 #############################
 # Do not edit below this line
 require 'digest/md5'
+require 'net/http'
 DELICIOUS_FEED               = "http://feeds.delicious.com/v2/rss/#{DELICIOUS_USER_NAME}?count=15"
 FOURSQUARE_CALLBACK_URL      = "http://#{DOMAIN_NAME}/foursquare/callback"
 GITHUB_URL                   = "https://api.github.com/users/#{GITHUB_USER_NAME}/repos"
