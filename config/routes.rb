@@ -1,4 +1,6 @@
 LittleCorner::Application.routes.draw do
+  root :to => "home#index"
+
   match "blog" => "blog#index"
   match "delicious" => "delicious#index"
   match "contact" => "contact#index"
@@ -14,8 +16,6 @@ LittleCorner::Application.routes.draw do
   match "projects" => "projects#index"
   match "soundcloud" => "soundcloud#index"
   match "twitter" => "twitter#index"
-
-  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
