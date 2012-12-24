@@ -15,6 +15,7 @@ LittleCorner::Application.routes.draw do
   match "lastfm" => "lastfm#index"
   match "projects" => "projects#index"
   match "soundcloud" => "soundcloud#index"
+  match "tumblr" => "tumblr#index"
   match "twitter" => "twitter#index"
 
   # The priority is based upon order of creation:

@@ -1,0 +1,26 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">Tumblr</h1>
+
+      <h3>Posts</h3>
+      <% @tumblr_feed.entries.each do |f| %>
+        <span class="secondary radius label"><%= f.published.strftime("%B %e, %Y") %></span>
+        <h4><a href="<%= f.url %>" target="_blank"><%= f.title %></a></h4>
+        <p><%= f.summary.html_safe %></p>
+        <p style="text-align:right;">
+          <% f.categories.each do |c| %>
+            <a href="http://www.delicious.com/<%= TUMBLR_USER_NAME %>/<%= c %>" target="_blank"><span class="radius label"><%= c %></span></a>
+          <% end %>
+        </p>
+        <hr>
+      <% end %>
+
+      <h6><a href="http://<%= TUMBLR_USER_NAME %>.tumblr.com/" target="_blank"><%= YOUR_NAME %> @ Tumblr</a></h6>
+    </div>
+  </div>
+
+</div>

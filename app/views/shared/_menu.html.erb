@@ -14,6 +14,7 @@
       <%= raw ENABLE_LAST_FM == true ? "#{params[:controller] == 'lastfm' ? "<li class=\"active\">" : "<li>"}<a href=\"/lastfm\">Last.FM</a></li>" : "" %>
       <%= raw ENABLE_PROJECTS == true ? "#{params[:controller] == 'projects' ? "<li class=\"active\">" : "<li>"}<a href=\"/projects\">Projects</a></li>" : "" %>
       <%= raw ENABLE_SOUNDCLOUD == true ? "#{params[:controller] == 'soundcloud' ? "<li class=\"active\">" : "<li>"}<a href=\"/soundcloud\">SoundCloud</a></li>" : "" %>
+      <%= raw ENABLE_TUMBLR == true ? "#{params[:controller] == 'tumblr' ? "<li class=\"active\">" : "<li>"}<a href=\"/tumblr\">Tumblr</a></li>" : "" %>
       <%= raw ENABLE_TWITTER == true ? "#{params[:controller] == 'twitter' ? "<li class=\"active\">" : "<li>"}<a href=\"/twitter\">Twitter</a></li>" : "" %>
     </ul>
 

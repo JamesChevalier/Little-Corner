@@ -61,6 +61,10 @@ ENABLE_SOUNDCLOUD            = false
 SOUNDCLOUD_CLIENT_ID         = ""
 SOUNDCLOUD_USER_NAME         = ""
 
+# Tumblr Config
+ENABLE_TUMBLR                = false
+TUMBLR_USER_NAME             = ""
+
 # Twitter Config
 ENABLE_TWITTER               = false
 TWITTER_CONSUMER_KEY         = ""
@@ -78,6 +82,7 @@ FOURSQUARE_CALLBACK_URL      = "http://#{DOMAIN_NAME}/foursquare/callback"
 GITHUB_URL                   = "https://api.github.com/users/#{GITHUB_USER_NAME}/repos"
 GRAVATAR_URL                 = "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(GRAVATAR_EMAIL_ADDRESS.downcase)}?d=http://robohash.org/#{URI.escape(YOUR_NAME)}.png?size=80x80&set=set3"
 INSTAGRAM_CALLBACK_URL       = "http://#{DOMAIN_NAME}/instagram/callback"
+TUMBLR_FEED_URL              = "http://#{TUMBLR_USER_NAME}.tumblr.com/rss"
 
 # Load the rails application
 require File.expand_path('../application', __FILE__)
