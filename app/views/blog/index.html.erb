@@ -7,8 +7,8 @@
 
       <h1 style="text-align:center;">Blog</h1>
       <% @feed.entries.each do |f| %>
-        <span class="secondary radius label"><%= f.published.strftime("%B %e, %Y") %></span>
-        <h4><a href="<%= f.url %>" target="_blank"><%= f.title %></a></h4>
+        <span class="secondary radius label"><%= f.pubDate.strftime("%B %e, %Y") %></span>
+        <h4><a href="<%= f.link %>" target="_blank"><%= f.title %></a></h4>
         <hr>
       <% end %>
 

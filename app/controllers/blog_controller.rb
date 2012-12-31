@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
 
   def index
-    @feed = Feedzirra::Feed.fetch_and_parse(BLOG_FEED_URL)
+    @feed = SimpleRSS.parse open(BLOG_FEED_URL)
   end
 
 end
