@@ -11,12 +11,12 @@ group :assets do
 end
 
 gem 'rails_autolink'
+gem 'feedzirra'
 gem 'foursquare2'
 gem 'instagram'
 gem 'jquery-rails'
 gem 'lastfm'
 gem 'mail_form'
 gem 'oauth2'
-gem 'simple-rss'
 gem 'soundcloud'
 gem 'twitter'

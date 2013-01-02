@@ -1,7 +1,7 @@
 class TumblrController < ApplicationController
 
   def index
-    @feed = SimpleRSS.parse( open("#{TUMBLR_FEED_URL}") )
+    @feed = Feedzirra::Feed.fetch_and_parse(TUMBLR_FEED_URL)
   end
 
 end
