@@ -7,14 +7,11 @@
       <h1 style="text-align:center;">Tumblr</h1>
 
       <h3>Posts</h3>
-      <% @tumblr_feed.entries.each do |f| %>
-        <span class="secondary radius label"><%= f.published.strftime("%B %e, %Y") %></span>
-        <h4><a href="<%= f.url %>" target="_blank"><%= f.title %></a></h4>
-        <p><%= f.summary.html_safe %></p>
+      <% @feed.items.each do |f| %>
+        <span class="secondary radius label"><%= f.pubDate.strftime("%B %e, %Y") %></span>
+        <h4><a href="<%= f.link %>" target="_blank"><%= f.title %></a></h4>
         <p style="text-align:right;">
-          <% f.categories.each do |c| %>
-            <a href="http://www.delicious.com/<%= TUMBLR_USER_NAME %>/<%= c %>" target="_blank"><span class="radius label"><%= c %></span></a>
-          <% end %>
+          <a href="http://<%= TUMBLR_USER_NAME %>.tumblr.com/tagged/<%= f.category %>" target="_blank"><span class="radius label"><%= f.category %></span></a>
         </p>
         <hr>
       <% end %>
