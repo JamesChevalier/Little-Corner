@@ -8,6 +8,7 @@ Compatible Services
 
 * Blog (via RSS)
 * Delicious
+* Flickr
 * Foursquare
 * GitHub
 * Google Analytics
@@ -43,6 +44,21 @@ How To Get It Going
 ### Configure individual services
 
 The sections below describe how to enable each individual service. Some of the steps in each section might duplicate steps you completed in the `Complete initial configuration`, above. If you aren't enabling one of them, just skip that section.
+
+
+#### Flickr
+* Register your application at [http://www.flickr.com/services/apps/create/apply/](http://www.flickr.com/services/apps/create/apply/)
+    * Set the Name of your app to "Little-Corner" (or something similar, if they require unique names)
+    * Enter a description for your app, or copy this: "I'm setting up Little Corner. https://github.com/JamesChevalier/Little-Corner Little Corner is a website that is used to pull your entire web presence into one place. It runs on Ruby on Rails, doesn't use a database, and is Heroku-ready."
+* You can get your User ID through [http://idgettr.com/](http://idgettr.com/)
+* Edit the `/config/environment.rb` file:
+    * Set the value for `ENABLE_FLICKR` to true
+    * Set the value for `FLICKR_API_KEY`
+    * Set the value for `FLICKR_API_SECRET`
+    * Set the value for `FLICKR_USER_ID` to your user ID
+    * Set the value for `FLICKR_USER_NAME` to your user name
+* Commit your changes with `git add .; git commit -m "Configure Flickr"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
 
 
 #### Foursquare

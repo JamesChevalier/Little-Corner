@@ -4,6 +4,7 @@ LittleCorner::Application.routes.draw do
   match "blog" => "blog#index"
   match "delicious" => "delicious#index"
   match "contact" => "contact#index"
+  match "flickr" => "flickr#index"
   match "foursquare" => "foursquare#index"
   match "foursquare/callback"
   match "foursquare/connect"

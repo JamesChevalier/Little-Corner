@@ -29,6 +29,13 @@ CONTACT_ENABLE_STARTTLS_AUTO = true                            # Set to true for
 ENABLE_DELICIOUS             = false
 DELICIOUS_USER_NAME          = ""
 
+# Flickr Config
+ENABLE_FLICKR                = false
+FLICKR_API_KEY               = ""
+FLICKR_API_SECRET            = ""
+FLICKR_USER_ID               = ""
+FLICKR_USER_NAME             = ""
+
 # Foursquare Config
 ENABLE_FOURSQUARE            = false
 FOURSQUARE_CLIENT_ID         = ""

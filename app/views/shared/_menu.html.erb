@@ -10,6 +10,7 @@
       <%= raw ENABLE_DELICIOUS == true ? "#{params[:controller] == 'delicious' ? "<li class=\"active\">" : "<li>"}<a href=\"/delicious\">Delicious</a></li>" : "" %>
       <%= raw ENABLE_FOURSQUARE == true ? "#{params[:controller] == 'foursquare' ? "<li class=\"active\">" : "<li>"}<a href=\"/foursquare\">Foursquare</a></li>" : "" %>
       <%= raw ENABLE_GITHUB == true ? "#{params[:controller] == 'github' ? "<li class=\"active\">" : "<li>"}<a href=\"/github\">GitHub</a></li>" : "" %>
+      <%= raw ENABLE_FLICKR == true ? "#{params[:controller] == 'flickr' ? "<li class=\"active\">" : "<li>"}<a href=\"/flickr\">Flickr</a></li>" : "" %>
       <%= raw ENABLE_INSTAGRAM == true ? "#{params[:controller] == 'instagram' ? "<li class=\"active\">" : "<li>"}<a href=\"/instagram\">Instagram</a></li>" : "" %>
       <%= raw ENABLE_LAST_FM == true ? "#{params[:controller] == 'lastfm' ? "<li class=\"active\">" : "<li>"}<a href=\"/lastfm\">Last.FM</a></li>" : "" %>
       <%= raw ENABLE_PROJECTS == true ? "#{params[:controller] == 'projects' ? "<li class=\"active\">" : "<li>"}<a href=\"/projects\">Projects</a></li>" : "" %>

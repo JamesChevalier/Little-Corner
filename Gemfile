@@ -12,6 +12,7 @@ end
 
 gem 'rails_autolink'
 gem 'feedzirra'
+gem 'flickraw'
 gem 'foursquare2'
 gem 'instagram'
 gem 'jquery-rails'

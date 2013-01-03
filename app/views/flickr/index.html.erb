@@ -1,0 +1,25 @@
+<div class="row">
+
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">Flickr</h1>
+
+      <h3>Recent Photos</h3>
+      <p style="text-align:center;">
+        <% @flickr_photos.each do |f| %>
+          <% info = flickr.photos.getInfo :photo_id => f.id, :secret => f.secret %>
+          <% sizes = flickr.photos.getSizes :photo_id => f.id %>
+
+          <%= link_to image_tag(sizes.find {|s| s.label == 'Small'}.source, :border=>0, :title => info.title), sizes.find {|s| s.label == 'Medium 640' }.source, :rel => "lightbox", :title => "#{info.title}" %>
+
+        <% end %>
+      </p>
+
+      <h6><a href="http://www.flickr.com/photos/<%= FLICKR_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ Flickr</a></h6>
+
+    </div>
+  </div>
+
+</div>
