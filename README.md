@@ -1,7 +1,7 @@
 Little Corner
 =============
 
-Little Corner is a website that is used to pull your entire web presence into one place. It runs on Ruby on Rails, doesn't use a database, and is Heroku-ready. You can see it in action at http://jameschevalier.us
+Little Corner is a website that is used to pull your entire web presence into one place. It runs on Ruby on Rails, doesn't use a database, and is Heroku-ready. You can see it in action at [http://jameschevalier.us](http://jameschevalier.us)
 
 Compatible Services
 -------------------
@@ -68,8 +68,8 @@ The sections below describe how to enable each individual service. Some of the s
 
 #### Instagram
 
-* Register for Developer access at http://instagr.am/developer/register/
-* Register your application at http://instagr.am/developer/manage/
+* Register for Developer access at [http://instagr.am/developer/register/](http://instagr.am/developer/register/)
+* Register your application at [http://instagr.am/developer/manage/](http://instagr.am/developer/manage/)
     * Set Application Name to "Little Corner"
     * Set Description to "Little Corner pulls your entire web presence into one place."
     * Set Website to your website's location
@@ -89,7 +89,7 @@ The sections below describe how to enable each individual service. Some of the s
 
 #### Last.FM
 
-* Register your application at http://www.last.fm/api/accounts
+* Register your application at [http://www.last.fm/api/accounts](http://www.last.fm/api/accounts)
     * Set the Application/Device Name to "Little-Corner" (or something similar, if they require unique names)
     * Set the Application Description to "My instance of Little-Corner"
     * Set the Application Homepage to your website's location
@@ -105,7 +105,7 @@ The sections below describe how to enable each individual service. Some of the s
 
 #### Soundcloud
 
-* Register your application at http://soundcloud.com/you/apps
+* Register your application at [http://soundcloud.com/you/apps](http://soundcloud.com/you/apps)
     * Set the Title of your app to "Little-Corner" (or something similar, if they require unique names)
 * Edit the `/config/environment.rb` file:
     * Set the value for `ENABLE_SOUNDCLOUD` to true
