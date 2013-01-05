@@ -103,7 +103,7 @@ GEM
     mail_form (1.4.1)
       actionmailer (~> 3.0)
     mime-types (1.19)
-    modular-scale (1.0.3)
+    modular-scale (1.0.4)
       compass (>= 0.11.5)
       sassy-math (>= 1.2)
     multi_json (1.5.0)
