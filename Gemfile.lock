@@ -73,9 +73,9 @@ GEM
     httmultiparty (0.3.8)
       httparty (>= 0.7.3)
       multipart-post
-    httparty (0.10.0)
+    httparty (0.10.1)
       multi_json (~> 1.0)
-      multi_xml
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     i18n (0.6.1)
     instagram (0.8.5)
