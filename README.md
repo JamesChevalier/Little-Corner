@@ -1,7 +1,7 @@
 Little Corner
 =============
 
-[![Code Climate](https://codeclimate.com/github/JamesChevalier/Little-Corner.png)](https://codeclimate.com/github/JamesChevalier/Little-Corner)
+[![Code Climate](https://codeclimate.com/github/JamesChevalier/Little-Corner.png)](https://codeclimate.com/github/JamesChevalier/Little-Corner) [![Build Status](https://travis-ci.org/JamesChevalier/Little-Corner.png)](https://travis-ci.org/JamesChevalier/Little-Corner)
 
 Little Corner is a website that is used to pull your entire web presence into one place. It runs on Ruby on Rails, doesn't use a database, and is Heroku-ready. You can see it in action at [http://jameschevalier.us](http://jameschevalier.us)
 
