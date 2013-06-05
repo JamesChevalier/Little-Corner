@@ -36,6 +36,7 @@ group :test do
   gem 'spork'
 end
 
+gem 'coveralls', require: false
 gem 'feedzirra'
 gem 'flickraw'
 gem 'foursquare2'
