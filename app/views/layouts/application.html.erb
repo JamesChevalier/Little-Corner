@@ -10,6 +10,9 @@
   <title><%= YOUR_NAME %></title>
   <meta name="keywords" content="<%= META_KEYWORDS %>"/>
   <meta name="description" content="<%= META_DESCRIPTION %>"/>
+  <% unless BLOG_FEED_URL.blank? %>
+    <link rel="alternate" type="application/rss+xml" title="<%= YOUR_NAME %>'s Blog Feed" href="<%= BLOG_FEED_URL %>" />
+  <% end %>
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
