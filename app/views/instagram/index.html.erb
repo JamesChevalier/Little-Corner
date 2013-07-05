@@ -15,7 +15,7 @@
 
       <h3>Recent Likes</h3>
       <p style="text-align:center;">
-        <% @instagram_likes.data.each do |ig| %>
+        <% @instagram_likes.each do |ig| %>
           <a href="<%= ig.images.standard_resolution.url %>" rel="lightbox" title="<%= ig.caption? ? "#{ig.caption.text}" : "" %>"><img src="<%= ig.images.thumbnail.url %>" border="0" title="<%= ig.caption? ? "#{ig.caption.text}" : "" %>" /></a>
         <% end %>
       </p>
