@@ -22,6 +22,7 @@ Compatible Services
 * Soundcloud
 * Tumblr
 * Twitter
+* Untappd
 
 How To Get It Going
 -------------
@@ -143,6 +144,7 @@ The sections below describe how to enable each individual service. Some of the s
 * Commit your changes with `git add .; git commit -m "Configure Tumblr"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
 
+
 #### Twitter
 
 * Register your application at https://dev.twitter.com/apps
@@ -158,4 +160,21 @@ The sections below describe how to enable each individual service. Some of the s
     * Set the value for `TWITTER_ACCESS_TOKEN_SECRET`
     * Set the value for `TWITTER_USER_NAME` to your user name
 * Commit your changes with `git add .; git commit -m "Configure Twitter"`
+* Deploy Little-Corner to Heroku with `git push heroku master`
+
+
+#### Untappd
+
+* Register your application at https://untappd.com/api/register?register=new
+    * Set the Email address to your email address (crazy, right?)
+    * Set the Application Name to "Little-Corner" (or something similar, if they require unique names)
+    * Set the Support URL to "http://YOURDOMAIN/contact"
+    * Set the Description of your app to "Little Corner pulls your entire web presence into one place."
+* Edit the `/config/environment.rb` file:
+    * Set the value for `ENABLE_UNTAPPD` to true
+    * Set the value for `UNTAPPD_CLIENT_ID`
+    * Set the value for `UNTAPPD_CLIENT_SECRET`
+    * Set the value for `UNTAPPD_GMT_OFFSET`
+        * Go to http://whatismytimezone.com/ and locate the first line that starts with `The current time is`... It will indicate your +/- GMT offset. For example, `The current time is Sat Jul 06 2013 12:06:26 GMT-0400 (EDT)` indicates that the GMT offset is "-4" because of the `GMT-0400` part of the line.
+* Commit your changes with `git add .; git commit -m "Configure Untappd"`
 * Deploy Little-Corner to Heroku with `git push heroku master`
