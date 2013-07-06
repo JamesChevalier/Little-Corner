@@ -1,0 +1,63 @@
+<div class="row">
+  <%= render "shared/menu" %>
+
+  <div class="nine mobile-four columns">
+    <div class="panel">
+      <h1 style="text-align:center;">Untappd</h1>
+
+      <h3>Badges</h3>
+      <div>
+        <% @badges.items.each do |b| %>
+          <div style="float:left;padding-right:10px;"><%= image_tag b.media.badge_image_md %></div>
+          <div>
+            <h6><%= b.badge_name %></h6>
+            <p><%= b.badge_description %></p>
+          </div>
+          <hr>
+        <% end %>
+      </div>
+
+      <h3>Recent Checkins</h3>
+      <% @checkins.checkins.items.each do |c| %>
+        <div class="six mobile-two columns">
+          <p>
+            <%= image_tag c.beer.beer_label %>
+            <br />
+            <%= c.beer.beer_name %>
+            <br />
+            <%= c.beer.beer_style %>, <%= c.beer.beer_abv %> ABV
+          </p>
+        </div>
+        <div class="six mobile-two columns">
+          <p>
+            <% if c.brewery.brewery_label == "https://untappd.s3.amazonaws.com/site/assets/images/temp/badge-brewery-default.png" %>
+              <% if c.brewery.contact.url.blank? %>
+                <%= image_tag(c.brewery.brewery_label, :width => 100)%>
+              <% else %>
+                <%= link_to(image_tag(c.brewery.brewery_label, :width => 100), c.brewery.contact.url) %>
+              <% end %>
+            <% else %>
+              <% if c.brewery.contact.url.blank? %>
+                <%= image_tag(c.brewery.brewery_label) %>
+              <% else %>
+                <%= link_to(image_tag(c.brewery.brewery_label), c.brewery.contact.url) %>
+              <% end %>
+            <% end %>
+            <br />
+            <% if c.brewery.contact.url.blank? %>
+              <%= c.brewery.brewery_name %>
+            <% else %>
+              <%= link_to c.brewery.brewery_name, c.brewery.contact.url %>
+            <% end %>
+            <br />
+            <%= "#{c.brewery.location.brewery_city}, " %><%= c.brewery.location.brewery_state %> <%= c.brewery.country_name %>
+          </p>
+        </div>
+        <p><strong>Rating: <%= c.rating_score %></strong><br /><%= c.checkin_comment %></p>
+        <hr>
+      <% end %>
+
+      <h6><a href="http://untappd.com/user/<%= UNTAPPD_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ Untappd</a></h6>
+    </div>
+  </div>
+</div>
