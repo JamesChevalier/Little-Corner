@@ -1,8 +1,7 @@
 class SoundcloudController < ApplicationController
-
   def index
-    client = Soundcloud.new(:client_id => SOUNDCLOUD_CLIENT_ID)
-    tracks = client.get("/users/#{SOUNDCLOUD_USER_NAME}/tracks", :limit => 10)
+    client      = Soundcloud.new(:client_id => SOUNDCLOUD_CLIENT_ID)
+    tracks      = client.get("/users/#{SOUNDCLOUD_USER_NAME}/tracks", :limit => 10)
     @soundcloud = []
 
     tracks.each do |t|
@@ -10,5 +9,4 @@ class SoundcloudController < ApplicationController
       @soundcloud << embed_info['html']
     end
   end
-
 end
