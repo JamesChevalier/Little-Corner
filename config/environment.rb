@@ -80,6 +80,13 @@ TWITTER_ACCESS_TOKEN         = ""
 TWITTER_ACCESS_TOKEN_SECRET  = ""
 TWITTER_USER_NAME            = ""
 
+# Untappd Config
+ENABLE_UNTAPPD               = false
+UNTAPPD_CLIENT_ID            = ""
+UNTAPPD_CLIENT_SECRET        = ""
+UNTAPPD_GMT_OFFSET           = ""
+UNTAPPD_USER_NAME            = ""
+
 #############################
 # Do not edit below this line
 require 'digest/md5'
@@ -90,6 +97,7 @@ GITHUB_URL                   = "https://api.github.com/users/#{GITHUB_USER_NAME}
 GRAVATAR_URL                 = "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(GRAVATAR_EMAIL_ADDRESS.downcase)}?d=http://robohash.org/#{URI.escape(YOUR_NAME)}.png?size=80x80&set=set3"
 INSTAGRAM_CALLBACK_URL       = "http://#{DOMAIN_NAME}/instagram/callback"
 TUMBLR_FEED_URL              = "http://#{TUMBLR_USER_NAME}.tumblr.com/rss"
+UNTAPPD_OAUTH_REDIRECT_URL   = "http://#{DOMAIN_NAME}/untappd/callback"
 
 # Load the rails application
 require File.expand_path('../application', __FILE__)
