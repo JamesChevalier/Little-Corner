@@ -33,13 +33,14 @@ How To Get It Going
 3. Change directory into Little-Corner with `cd Little-Corner`
 
 ### Complete initial configuration
-1. Edit `config/environment.rb` as completely as possible
-2. Replace `public/favicon.ico` with your own favicon
-3. Replace `/app/assets/images/bg.jpg` with your own background image
+1. Run `rake secret` and replace the secret_token in `config/initializers/secret_token.rb` with the result of this command
+2. Edit `config/environment.rb` as completely as possible
+3. Replace `public/favicon.ico` with your own favicon
+4. Replace `/app/assets/images/bg.jpg` with your own background image
     * Make sure your background image has the same filename
     * A larger-sized image is best; something like 1920x1200, or 1280x800
-4. Add your own `projects` images (150w x 80h) to the `/app/assets/images` directory
-5. Edit `app/views/projects/index.html.erb` to add your projects
+5. Add your own `projects` images (150w x 80h) to the `/app/assets/images` directory
+6. Edit `app/views/projects/index.html.erb` to add your projects
 
 ### Deploy initial version
 1. Commit your configuration changes with `git add .; git commit -m "Update Config"`
