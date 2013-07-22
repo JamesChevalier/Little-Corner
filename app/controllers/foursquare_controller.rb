@@ -1,9 +1,7 @@
 class FoursquareController < ApplicationController
 
   def callback
-    unless FOURSQUARE_OAUTH_TOKEN.blank?
-      redirect_to "/foursquare"
-    else
+    if FOURSQUARE_OAUTH_TOKEN.blank?
       uri                    = URI.parse("https://foursquare.com/oauth2/access_token?client_id=#{FOURSQUARE_CLIENT_ID}&client_secret=#{FOURSQUARE_CLIENT_SECRET}&grant_type=authorization_code&redirect_uri=#{FOURSQUARE_CALLBACK_URL}&code=#{params[:code]}")
       http                   = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl           = true
@@ -12,6 +10,8 @@ class FoursquareController < ApplicationController
       response               = JSON.parse(http.request(request).body)
       access_token           = OAuth2::AccessToken.new(client, response["access_token"])
       session[:access_token] = access_token.token
+    else
+      redirect_to "/foursquare"
     end
   end
 
