@@ -21,9 +21,10 @@ group :development do
   gem 'binding_of_caller'
   gem 'brakeman'
   gem 'bundler-audit'
+  gem 'rails_best_practices'
   gem 'rb-fsevent', '~> 0.9.1'
   gem 'ruby_gntp' # also install growlnotify from the Extras/growlnotify/growlnotify.pkg in Growl disk image
-  gem 'rails_best_practices'
+  gem 'rubocop'
 end
 
 group :test do
