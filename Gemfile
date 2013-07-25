@@ -7,7 +7,7 @@ group :assets do
   gem 'compass-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
-  gem 'zurb-foundation', '3.2.5'
+  gem 'zurb-foundation'#, '3.2.5'
 end
 
 group :development, :test do
