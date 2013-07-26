@@ -72,7 +72,7 @@ The sections below describe how to enable each individual service. Some of the s
 * Register your application at https://foursquare.com/developers/apps
     * Set the Name of your app to "Little-Corner" (or something similar, if they require unique names)
     * Set Download / welcome page url to your website's location
-    * Set Callback URL to "http://YOURDOMAIN/foursquare/callback"
+    * Set Redirect URI to "http://YOURDOMAIN/foursquare/callback"
     * Check the box for Web Connect Support
 * Edit the `/config/environment.rb` file:
     * Set the value for `ENABLE_FOURSQUARE` to true
