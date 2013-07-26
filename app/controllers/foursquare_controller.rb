@@ -11,7 +11,7 @@ class FoursquareController < ApplicationController
       access_token           = OAuth2::AccessToken.new(client, response["access_token"])
       session[:access_token] = access_token.token
     else
-      redirect_to "/foursquare"
+      redirect_to foursquare_url
     end
   end
 
@@ -29,7 +29,7 @@ class FoursquareController < ApplicationController
     if FOURSQUARE_OAUTH_TOKEN.blank?
       redirect_to "http://foursquare.com/oauth2/authenticate?client_id=#{FOURSQUARE_CLIENT_ID}&response_type=code&redirect_uri=#{FOURSQUARE_CALLBACK_URL}/"
     else
-      redirect_to "/foursquare"
+      redirect_to foursquare_url
     end
   end
 

@@ -5,7 +5,7 @@ class InstagramController < ApplicationController
       response               = Instagram.get_access_token(params[:code], :redirect_uri => INSTAGRAM_CALLBACK_URL)
       session[:access_token] = response.access_token
     else
-      redirect_to "/instagram"
+      redirect_to instagram_url
     end
   end
 
@@ -13,7 +13,7 @@ class InstagramController < ApplicationController
     if INSTAGRAM_ACCESS_TOKEN.blank?
       redirect_to Instagram.authorize_url(:redirect_uri => INSTAGRAM_CALLBACK_URL)
     else
-      redirect_to "/instagram"
+      redirect_to instagram_url
     end
   end
 
