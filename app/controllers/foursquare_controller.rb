@@ -34,9 +34,7 @@ class FoursquareController < ApplicationController
   end
 
   def index
-    foursquare_connection  = Foursquare2::Client.new(:client_id    => FOURSQUARE_CLIENT_ID,
-                                                    :client_secret => FOURSQUARE_CLIENT_SECRET,
-                                                    :oauth_token   => FOURSQUARE_OAUTH_TOKEN)
+    foursquare_connection  = Foursquare2::Client.new(:client_id => FOURSQUARE_CLIENT_ID, :client_secret => FOURSQUARE_CLIENT_SECRET, :oauth_token => FOURSQUARE_OAUTH_TOKEN)
     @foursquare_badges     = foursquare_connection.user_badges('self')
     @foursquare_mayorships = foursquare_connection.user_mayorships('self')
     @foursquare_tips       = foursquare_connection.user_tips('self')
