@@ -8,21 +8,12 @@ class FoursquareController < ApplicationController
       http.verify_mode       = OpenSSL::SSL::VERIFY_NONE
       request                = Net::HTTP::Get.new(uri.request_uri)
       response               = JSON.parse(http.request(request).body)
+      client                 = OAuth2::Client.new(FOURSQUARE_CLIENT_ID, FOURSQUARE_CLIENT_SECRET, :site => 'http://foursquare.com/oauth2/', :request_token_path => "/oauth2/request_token", :access_token_path => "/oauth2/access_token", :authorize_path => "/oauth2/authenticate?response_type=code", :parse_json => true)
       access_token           = OAuth2::AccessToken.new(client, response["access_token"])
       session[:access_token] = access_token.token
     else
       redirect_to foursquare_url
     end
-  end
-
-  def client
-    OAuth2::Client.new(FOURSQUARE_CLIENT_ID,
-                      FOURSQUARE_CLIENT_SECRET,
-                      :site               => 'http://foursquare.com/oauth2/',
-                      :request_token_path => "/oauth2/request_token",
-                      :access_token_path  => "/oauth2/access_token",
-                      :authorize_path     => "/oauth2/authenticate?response_type=code",
-                      :parse_json         => true)
   end
 
   def connect
