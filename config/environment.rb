@@ -7,6 +7,7 @@ SITE_DESCRIPTION             = ""
 ENABLE_GOOGLE_ANALYTICS      = false
 GOOGLE_ANALYTICS_PROPERTY_ID = ""
 GRAVATAR_EMAIL_ADDRESS       = ""
+ENABLE_WOOPRA                = false
 
 # Blog Config
 ENABLE_BLOG                  = false

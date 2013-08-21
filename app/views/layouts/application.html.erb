@@ -26,6 +26,7 @@
     <%= csrf_meta_tags %>
 
     <%= render 'google_analytics.html.erb' if ENABLE_GOOGLE_ANALYTICS == true %>
+    <%= render 'woopra.html.erb' if ENABLE_WOOPRA == true %>
   </head>
 
   <body>
