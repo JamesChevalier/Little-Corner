@@ -25,8 +25,8 @@
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
 
-    <%= render 'google_analytics.html.erb' if ENABLE_GOOGLE_ANALYTICS == true %>
-    <%= render 'woopra.html.erb' if ENABLE_WOOPRA == true %>
+    <%= render 'shared/google_analytics' if ENABLE_GOOGLE_ANALYTICS == true %>
+    <%= render 'shared/woopra' if ENABLE_WOOPRA == true %>
   </head>
 
   <body>
