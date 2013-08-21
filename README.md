@@ -23,6 +23,7 @@ Compatible Services
 * Tumblr
 * Twitter
 * Untappd
+* Woopra
 
 How To Get It Going
 -------------
