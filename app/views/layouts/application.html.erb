@@ -21,8 +21,8 @@
       <link rel="alternate" type="application/rss+xml" title="<%= YOUR_NAME %>'s Blog Feed" href="<%= BLOG_FEED_URL %>" />
     <% end %>
 
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+  	<%= stylesheet_link_tag    'application' %>
+  	<%= javascript_include_tag 'vendor/custom.modernizr' %>
     <%= csrf_meta_tags %>
 
     <%= render 'shared/google_analytics' if ENABLE_GOOGLE_ANALYTICS == true %>
@@ -32,6 +32,6 @@
   <body>
     <div style="height:67px;"></div>
     <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>

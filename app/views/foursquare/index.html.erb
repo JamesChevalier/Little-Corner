@@ -1,5 +1,5 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="radius panel">
@@ -24,7 +24,8 @@
       <h3>Mayorships</h3>
       <p>
         <% @foursquare_mayorships.items.each do |m| %>
-          <img src="<%= m.venue.categories.first.icon %>" border="0" title="<%= m.venue.name %>" />&nbsp;<%= m.venue.name %><br />
+          <img src="<%= m.venue.categories.first.icon %>" border="0" title="<%= m.venue.name %>" />&nbsp;
+          <%= m.venue.name %><br />
         <% end %>
       </p>
 

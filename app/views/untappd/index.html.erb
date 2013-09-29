@@ -1,5 +1,5 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="radius panel">
@@ -30,7 +30,7 @@
         </div>
         <div class="small-6 large-6 columns">
           <p>
-            <% if c.brewery.brewery_label == "https://untappd.s3.amazonaws.com/site/assets/images/temp/badge-brewery-default.png" %>
+            <% if c.brewery.brewery_label == 'https://untappd.s3.amazonaws.com/site/assets/images/temp/badge-brewery-default.png' %>
               <% if c.brewery.contact.url.blank? %>
                 <%= image_tag(c.brewery.brewery_label, :width => 100)%>
               <% else %>

@@ -4,20 +4,46 @@
     <p><%= SITE_DESCRIPTION.html_safe %></p>
 
     <ul class="side-nav">
-      <%= raw params[:controller] == 'home' ? "<li class=\"active\">" : "<li>" %><a href="/">Home</a></li>
-      <%= raw ENABLE_CONTACT == true ? "#{params[:controller] == 'contact' ? "<li class=\"active\">" : "<li>"}<a href=\"/contact\">Contact</a></li>" : "" %>
-      <%= raw ENABLE_BLOG == true ? "#{params[:controller] == 'blog' ? "<li class=\"active\">" : "<li>"}<a href=\"/blog\">Blog</a></li>" : "" %>
-      <%= raw ENABLE_DELICIOUS == true ? "#{params[:controller] == 'delicious' ? "<li class=\"active\">" : "<li>"}<a href=\"/delicious\">Delicious</a></li>" : "" %>
-      <%= raw ENABLE_FOURSQUARE == true ? "#{params[:controller] == 'foursquare' ? "<li class=\"active\">" : "<li>"}<a href=\"/foursquare\">Foursquare</a></li>" : "" %>
-      <%= raw ENABLE_GITHUB == true ? "#{params[:controller] == 'github' ? "<li class=\"active\">" : "<li>"}<a href=\"/github\">GitHub</a></li>" : "" %>
-      <%= raw ENABLE_FLICKR == true ? "#{params[:controller] == 'flickr' ? "<li class=\"active\">" : "<li>"}<a href=\"/flickr\">Flickr</a></li>" : "" %>
-      <%= raw ENABLE_INSTAGRAM == true ? "#{params[:controller] == 'instagram' ? "<li class=\"active\">" : "<li>"}<a href=\"/instagram\">Instagram</a></li>" : "" %>
-      <%= raw ENABLE_LAST_FM == true ? "#{params[:controller] == 'lastfm' ? "<li class=\"active\">" : "<li>"}<a href=\"/lastfm\">Last.FM</a></li>" : "" %>
-      <%= raw ENABLE_PROJECTS == true ? "#{params[:controller] == 'projects' ? "<li class=\"active\">" : "<li>"}<a href=\"/projects\">Projects</a></li>" : "" %>
-      <%= raw ENABLE_SOUNDCLOUD == true ? "#{params[:controller] == 'soundcloud' ? "<li class=\"active\">" : "<li>"}<a href=\"/soundcloud\">SoundCloud</a></li>" : "" %>
-      <%= raw ENABLE_TUMBLR == true ? "#{params[:controller] == 'tumblr' ? "<li class=\"active\">" : "<li>"}<a href=\"/tumblr\">Tumblr</a></li>" : "" %>
-      <%= raw ENABLE_TWITTER == true ? "#{params[:controller] == 'twitter' ? "<li class=\"active\">" : "<li>"}<a href=\"/twitter\">Twitter</a></li>" : "" %>
-      <%= raw ENABLE_UNTAPPD == true ? "#{params[:controller] == 'untappd' ? "<li class=\"active\">" : "<li>"}<a href=\"/untappd\">Untappd</a></li>" : "" %>
+      <li <%= 'class="active"' if controller.controller_name == 'home' %>><%= link_to 'Home', root_path %></li>
+      <% if ENABLE_CONTACT == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'contact' %>><a href="/contact">Contact</a></li>
+      <% end %>
+      <% if ENABLE_BLOG == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'blog' %>><a href="/blog">Blog</a></li>
+      <% end %>
+      <% if ENABLE_DELICIOUS == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'delicious' %>><a href="/delicious">Delicious</a></li>
+      <% end %>
+      <% if ENABLE_FOURSQUARE == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'foursquare' %>><a href="/foursquare">Foursquare</a></li>
+      <% end %>
+      <% if ENABLE_GITHUB == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'github' %>><a href="/github">GitHub</a></li>
+      <% end %>
+      <% if ENABLE_FLICKR == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'flickr' %>><a href="/flickr">Flickr</a></li>
+      <% end %>
+      <% if ENABLE_INSTAGRAM == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'instagram' %>><a href="/instagram">Instagram</a></li>
+      <% end %>
+      <% if ENABLE_LAST_FM == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'lastfm' %>><a href="/lastfm">LastFM</a></li>
+      <% end %>
+      <% if ENABLE_PROJECTS == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'projects' %>><a href="/projects">Projects</a></li>
+      <% end %>
+      <% if ENABLE_SOUNDCLOUD == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'soundcloud' %>><a href="/soundcloud">SoundCloud</a></li>
+      <% end %>
+      <% if ENABLE_TUMBLR == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'tumblr' %>><a href="/tumblr">Tumblr</a></li>
+      <% end %>
+      <% if ENABLE_TWITTER == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'twitter' %>><a href="/twitter">Twitter</a></li>
+      <% end %>
+      <% if ENABLE_UNTAPPD == true %>
+        <li <%= 'class="active"' if controller.controller_name == 'untappd' %>><a href="/untappd">Untappd</a></li>
+      <% end %>
     </ul>
   </div>
 </div>

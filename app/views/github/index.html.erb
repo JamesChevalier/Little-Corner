@@ -1,5 +1,5 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="radius panel">
@@ -9,12 +9,27 @@
         <% if r['private'] == false %>
           <a href="<%= r['url'] %>"><h4><%= r['name'] %></h4></a>
           <p>
-            <%= raw "<span class=\"radius secondary label\">Fork</span>&nbsp;" if r['fork'] == true %>
-            <%= raw "<span class=\"radius label\">#{r['watchers_count']} watchers</span>&nbsp;" if r['watchers_count'] > 0 %>
-            <%= raw "<span class=\"radius label\">#{r['forks_count']} forks</span>&nbsp;" if r['forks_count'] > 0 %>
-            <%= raw "<span class=\"radius alert label\">#{r['open_issues']} open issues</span>&nbsp;" if r['open_issues'] > 0 %>
-            <%= raw "<a href=\"#{r['url']}\" target=\"_blank\"><span class=\"radius success label\">See it on GitHub</span></a>&nbsp;" %>
-            <%= raw "<a href=\"#{r['homepage']}\" target=\"_blank\"><span class=\"radius success label\">Go to the Homepage</span></a>" if r['homepage'] %>&nbsp;
+            <% if r['fork'] == true %>
+              <span class="radius secondary label">Fork</span>&nbsp;
+            <% end %>
+
+            <% if r['watchers_count'] > 0 %>
+              <span class="radius label"><%= r['watchers_count'] %> watchers</span>&nbsp;
+            <% end %>
+
+            <% if r['forks_count'] > 0 %>
+              <span class="radius label"><%= r['forks_count'] %> forks</span>&nbsp;
+            <% end %>
+
+            <% if r['open_issues'] > 0 %>
+              <span class="radius alert label"><%= r['open_issues'] %> open issues</span>&nbsp;
+            <% end %>
+
+            <a href="<%= r['url'] %>" target="_blank"><span class="radius success label">See it on GitHub</span></a>&nbsp;
+
+            <% if r['homepage'] %>
+              <a href="<%= r['homepage'] %>" target="_blank"><span class="radius success label">Go to the Homepage</span></a>&nbsp;
+            <% end %>
             <br />
             <%= r['description'] %>
           </p>

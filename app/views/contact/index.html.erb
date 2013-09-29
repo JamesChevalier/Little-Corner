@@ -1,15 +1,15 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="radius panel">
       <h1 style="text-align:center;">Contact</h1>
 
-      <%= form_for @message, :url => contact_path do |form| %>
-        <%= form.text_field :name, :placeholder => "Name" %>
-        <%= form.text_field :email, :placeholder => "Email" %>
-        <%= form.text_area :message, :placeholder => "Message" %>
-        <%= form.submit "Send", :class => "regular radius button" %>
+      <%= form_for @message, url: contact_path do |form| %>
+        <%= form.text_field :name, placeholder: 'Name' %>
+        <%= form.text_field :email, placeholder: 'Email' %>
+        <%= form.text_area :message, placeholder: 'Message' %>
+        <%= form.submit 'Send', class: 'regular radius button' %>
       <% end %>
     </div>
   </div>

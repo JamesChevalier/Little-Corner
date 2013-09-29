@@ -1,5 +1,5 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="radius panel">
@@ -8,7 +8,9 @@
       <h3>Tweets</h3>
       <% @timeline.each do |t| %>
         <p><%= auto_link(t.text) %></p>
-        <a href="http://twitter.com/<%= t.user.screen_name %>/status/<%= t.id %>" target="_blank"><span class="radius label"><%= t.created_at.strftime("%l:%M:%S %P on %B %e, %Y") %></span></a>
+        <a href="http://twitter.com/<%= t.user.screen_name %>/status/<%= t.id %>" target="_blank">
+          <span class="radius label"><%= t.created_at.strftime('%l:%M:%S %P on %B %e, %Y') %></span>
+        </a>
         <hr>
       <% end %>
 
@@ -21,8 +23,13 @@
           </p>
         </div>
         <div>
-          <p><a href="http://twitter.com/<%= f.user.screen_name %>/status/<%= f.id %>" target="_blank"><span class="radius label"><%= f.created_at.strftime("%l:%M:%S %P on %B %e, %Y") %></span></a><br />
-          <%= auto_link(f.text) %></p>
+          <p>
+            <a href="http://twitter.com/<%= f.user.screen_name %>/status/<%= f.id %>" target="_blank">
+              <span class="radius label"><%= f.created_at.strftime('%l:%M:%S %P on %B %e, %Y') %></span>
+            </a>
+            <br />
+            <%= auto_link(f.text) %>
+          </p>
         </div>
         <hr>
       <% end %>

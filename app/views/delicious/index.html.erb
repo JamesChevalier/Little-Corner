@@ -1,16 +1,18 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="radius panel">
       <h1 style="text-align:center;">Delicious</h1>
 
-      <% @feed.entries.each do |f| %>
-        <span class="secondary radius label"><%= f.published.strftime("%B %e, %Y") %></span>
-        <h4><a href="<%= f.url %>" target="_blank"><%= f.title.html_safe %></a></h4>
+      <% @feed.entries.each do |bookmark| %>
+        <span class="secondary radius label"><%= bookmark.published.strftime('%B %e, %Y') %></span>
+        <h4><a href="<%= bookmark.url %>" target="_blank"><%= bookmark.title.html_safe %></a></h4>
         <p style="text-align:right;">
-          <% f.categories.each do |c| %>
-            <a href="http://www.delicious.com/<%= DELICIOUS_USER_NAME %>/<%= c %>" target="_blank"><span class="radius label"><%= c %></span></a>
+          <% bookmark.categories.each do |category| %>
+            <a href="http://www.delicious.com/<%= DELICIOUS_USER_NAME %>/<%= category %>" target="_blank">
+              <span class="radius label"><%= category %></span>
+            </a>
           <% end %>
         </p>
         <hr>

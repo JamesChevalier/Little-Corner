@@ -1,18 +1,20 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="panel">
       <h1 style="text-align:center;">Tumblr</h1>
 
       <h3>Posts</h3>
-      <% @feed.entries.each do |f| %>
-        <span class="secondary radius label"><%= f.published.strftime("%B %e, %Y") %></span>
-        <h4><a href="<%= f.url %>" target="_blank"><%= f.title %></a></h4>
-        <p><%= f.summary.html_safe %></p>
+      <% @feed.entries.each do |post| %>
+        <span class="secondary radius label"><%= post.published.strftime('%B %e, %Y') %></span>
+        <h4><a href="<%= post.url %>" target="_blank"><%= post.title %></a></h4>
+        <p><%= post.summary.html_safe %></p>
         <p style="text-align:right;">
-          <% f.categories.each do |c| %>
-            <a href="http://www.delicious.com/<%= DELICIOUS_USER_NAME %>/<%= c %>" target="_blank"><span class="radius label"><%= c %></span></a>
+          <% post.categories.each do |category| %>
+            <a href="http://<%= TUMBLR_USER_NAME %>.tumblr.com/tagged/<%= category %>" target="_blank">
+              <span class="radius label"><%= category %></span>
+            </a>
           <% end %>
         </p>
         <hr>

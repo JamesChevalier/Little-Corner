@@ -1,5 +1,5 @@
 <div class="row">
-  <%= render "shared/menu" %>
+  <%= render 'shared/menu' %>
 
   <div class="small-12 large-9 columns">
     <div class="radius panel">
@@ -7,10 +7,10 @@
 
       <h3>Recent Photos</h3>
       <p style="text-align:center;">
-        <% @flickr_photos.each do |f| %>
-          <% info = flickr.photos.getInfo :photo_id => f.id, :secret => f.secret %>
-          <% sizes = flickr.photos.getSizes :photo_id => f.id %>
-          <%= link_to image_tag(sizes.find {|s| s.label == 'Small'}.source, :border=>0, :title => info.title), sizes.find {|s| s.label == 'Medium 640' }.source, :rel => "lightbox", :title => "#{info.title}" %>
+        <% @feed.each do |photo| %>
+          <% info  = flickr.photos.getInfo photo_id: photo.id, secret: photo.secret %>
+          <% sizes = flickr.photos.getSizes photo_id: photo.id %>
+          <%= link_to image_tag(sizes.find { |s| s.label == 'Small' }.source, border: 0, title: info.title), sizes.find { |s| s.label == 'Medium 640' }.source, rel: 'lightbox', title: "#{info.title}" %>
         <% end %>
       </p>
 
