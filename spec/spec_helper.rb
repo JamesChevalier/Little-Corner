@@ -2,8 +2,10 @@ require 'coveralls'
 Coveralls.wear!
 
 require 'simplecov'
+require 'simplecov-rcov-text'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::RcovTextFormatter,
   Coveralls::SimpleCov::Formatter
 ]
 SimpleCov.start 'rails'
@@ -76,6 +78,7 @@ end
 Spork.each_run do
   # This code will be run each time you run your specs.
   FactoryGirl.reload
+  Zonebie.set_random_timezone
 end
 
 # --- Instructions ---
