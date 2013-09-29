@@ -1,0 +1,7 @@
+<p style="text-align:center;">
+  <% photos.each do |photo| %>
+    <a href="<%= photo.images.standard_resolution.url %>" rel="lightbox" title="<%= photo.caption.text if photo.caption %>">
+      <img src="<%= photo.images.thumbnail.url %>" border="0" title="<%= photo.caption.text if photo.caption %>" />
+    </a>
+  <% end %>
+</p>

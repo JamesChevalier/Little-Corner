@@ -6,18 +6,10 @@
       <h1 style="text-align:center;">Instagram</h1>
 
       <h3>Recent Photos</h3>
-      <p style="text-align:center;">
-        <% @instagram_photos.each do |ig| %>
-          <a href="<%= ig.images.standard_resolution.url %>" rel="lightbox" title="<%= ig.caption? ? "#{ig.caption.text}" : "" %>"><img src="<%= ig.images.thumbnail.url %>" border="0" title="<%= ig.caption? ? "#{ig.caption.text}" : "" %>" /></a>
-        <% end %>
-      </p>
+      <%= render 'photos', photos: @instagram_photos %>
 
       <h3>Recent Likes</h3>
-      <p style="text-align:center;">
-        <% @instagram_likes.each do |ig| %>
-          <a href="<%= ig.images.standard_resolution.url %>" rel="lightbox" title="<%= ig.caption? ? "#{ig.caption.text}" : "" %>"><img src="<%= ig.images.thumbnail.url %>" border="0" title="<%= ig.caption? ? "#{ig.caption.text}" : "" %>" /></a>
-        <% end %>
-      </p>
+      <%= render 'photos', photos: @instagram_likes %>
     </div>
   </div>
 </div>
