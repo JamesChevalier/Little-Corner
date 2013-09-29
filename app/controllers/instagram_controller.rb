@@ -19,8 +19,12 @@ class InstagramController < ApplicationController
   end
 
   def index
-    @instagram_photos = Instagram.user_recent_media(:user => INSTAGRAM_USER, :access_token => INSTAGRAM_ACCESS_TOKEN)
-    @instagram_likes  = Instagram.user_liked_media(:user => INSTAGRAM_USER, :access_token => INSTAGRAM_ACCESS_TOKEN)
+    @instagram_photos = Rails.cache.fetch('instagram_photos', expires_in: 12.hours, race_condition_ttl: 10) do
+      Instagram.user_recent_media(user: INSTAGRAM_USER, access_token: INSTAGRAM_ACCESS_TOKEN)
+    end
+    @instagram_likes  = Rails.cache.fetch('instagram_likes', expires_in: 12.hours, race_condition_ttl: 10) do
+      Instagram.user_liked_media(user: INSTAGRAM_USER, access_token: INSTAGRAM_ACCESS_TOKEN)
+    end
   end
 
 end

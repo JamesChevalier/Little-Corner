@@ -1,7 +1,11 @@
 # Connects to Untappgd via API
 class UntappdController < ApplicationController
   def index
-    @checkins = Untappd::User.feed(UNTAPPD_USER_NAME)
-    @badges   = Untappd::User.badges(UNTAPPD_USER_NAME)
+    @checkins = Rails.cache.fetch('checkins', expires_in: 1.hour, race_condition_ttl: 10) do
+      Untappd::User.feed(UNTAPPD_USER_NAME)
+    end
+    @badges   = Rails.cache.fetch('badges', expires_in: 1.hour, race_condition_ttl: 10) do
+      Untappd::User.badges(UNTAPPD_USER_NAME)
+    end
   end
 end
