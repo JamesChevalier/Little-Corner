@@ -1,3 +1,4 @@
+# Connects to Foursquare via API
 class FoursquareController < ApplicationController
 
   def callback

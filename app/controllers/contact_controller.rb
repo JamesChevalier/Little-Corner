@@ -1,3 +1,4 @@
+# Accepts emails via form on site
 class ContactController < ApplicationController
   def index
     if request.post?

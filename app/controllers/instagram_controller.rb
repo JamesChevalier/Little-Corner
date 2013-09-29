@@ -1,3 +1,4 @@
+# Connects to Instagram via API
 class InstagramController < ApplicationController
 
   def callback

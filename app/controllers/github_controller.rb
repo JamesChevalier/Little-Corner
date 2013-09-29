@@ -1,3 +1,4 @@
+# Connects to Github via API
 class GithubController < ApplicationController
   def index
     uri                  = uri = URI.parse(GITHUB_URL)

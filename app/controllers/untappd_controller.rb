@@ -1,3 +1,4 @@
+# Connects to Untappgd via API
 class UntappdController < ApplicationController
   def index
     @checkins = Untappd::User.feed(UNTAPPD_USER_NAME)

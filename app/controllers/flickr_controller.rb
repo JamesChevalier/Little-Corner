@@ -1,3 +1,4 @@
+# Connects to Flickr via API
 class FlickrController < ApplicationController
   def index
     FlickRaw.api_key       = FLICKR_API_KEY

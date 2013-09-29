@@ -1,3 +1,4 @@
+# Connects to LastFM via API
 class LastfmController < ApplicationController
   def index
     lastfm       = Lastfm.new(LAST_FM_API_KEY, LAST_FM_API_SECRET)

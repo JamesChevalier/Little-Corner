@@ -1,3 +1,4 @@
+# Connects to Soundcloud via API
 class SoundcloudController < ApplicationController
   def index
     client      = Soundcloud.new(:client_id => SOUNDCLOUD_CLIENT_ID)
