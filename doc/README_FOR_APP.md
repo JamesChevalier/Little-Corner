@@ -12,11 +12,36 @@ To run it, run `brakeman -o coverage/brakeman-report.html` in the Rails project 
 To run it, run `bundle-audit` in the Rails project directory.
 
 
-# rails_best_practices
+# mailcatcher
 
-[rails_best_practices](http://rails-bestpractices.com/) is a gem that checks your Rails app against the best practices stored at [http://rails-bestpractices.com/](http://rails-bestpractices.com/).
+The project is configured to use [mailcatcher](http://mailcatcher.me) by default. This lets you view mail being sent by the app in the browser. To use mailcatcher...
 
-To run it, run `rails_best_practices` in the Rails project directory.
+#### One time setup:
+
+* `rvm default@mailcatcher --create`
+* `gem install mailcatcher`
+* `rvm wrapper default@mailcatcher --no-prefix mailcatcher catchmail`
+
+#### Each use:
+
+* `mailcatcher`
+* Go to [http://localhost:1080](http://localhost:1080)
+* Perform actions that produce emails
+* [http://localhost:1080](http://localhost:1080) will automatically display the incoming email & provide notifications if you have Growl installed
+
+#### To use Gmail instead:
+
+* Pause for a moment to question all of your life decisions
+* Swap the 'config.action_mailer.smtp_settings' line commenting in `config/environments/development.rb`
+* Restart Rails
+* Live in constant fear, at the grimy seam of panic & worry, that your mail tests are being sent to everyone everywhere ever
+
+
+# metric_fu
+
+[metric_fu](http://metric-fu.rubyforge.org/) is a gem that checks your Rails app against a while pile of best practices.
+
+To run it, run `metric_fu` in the Rails project directory. It will automatically open its results in a browser.
 
 
 # rubocop
