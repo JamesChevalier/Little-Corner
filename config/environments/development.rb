@@ -38,14 +38,18 @@ LittleCorner::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    :address              => "#{CONTACT_SMTP_ADDRESS}",
-    :port                 => CONTACT_SMTP_PORT,
-    :domain               => "#{CONTACT_DOMAIN}",
-    :user_name            => "#{CONTACT_USER_NAME}",
-    :password             => "#{CONTACT_PASSWORD}",
-    :authentication       => "#{CONTACT_AUTHENTICATION_TYPE}",
-    :enable_starttls_auto => CONTACT_ENABLE_STARTTLS_AUTO
-  }
+  config.action_mailer.default_url_options   = { host: 'lc.dev' }
+
+  # Swap the 'config.action_mailer.smtp_settings' line commenting to use gmail
+  config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+  # config.action_mailer.smtp_settings = {
+  #   :address              => "#{CONTACT_SMTP_ADDRESS}",
+  #   :port                 => CONTACT_SMTP_PORT,
+  #   :domain               => "#{CONTACT_DOMAIN}",
+  #   :user_name            => "#{CONTACT_USER_NAME}",
+  #   :password             => "#{CONTACT_PASSWORD}",
+  #   :authentication       => "#{CONTACT_AUTHENTICATION_TYPE}",
+  #   :enable_starttls_auto => CONTACT_ENABLE_STARTTLS_AUTO
+  # }
 
 end
