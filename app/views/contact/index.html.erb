@@ -8,7 +8,7 @@
       <%= form_for @message, url: contact_path do |form| %>
         <%= form.text_field :name, placeholder: 'Name' %>
         <%= form.text_field :email, placeholder: 'Email' %>
-        <%= form.text_area :message, placeholder: 'Message' %>
+        <%= form.text_area :message, placeholder: 'Message', style: 'height:200px;' %>
         <%= form.submit 'Send', class: 'regular radius button' %>
       <% end %>
     </div>
