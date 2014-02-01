@@ -13,8 +13,8 @@ MetricFu::Configuration.run do |config|
   end
 
   config.configure_metric(:rcov) do |rcov|
-    rcov.enabled  = true
-    coverage_file = File.expand_path("coverage/rcov/rcov.txt", Dir.pwd)
-    rcov.external = coverage_file
+    rcov.enabled = true
+    rcov.external = File.expand_path("coverage/rcov/rcov.txt", Dir.pwd)
+    rcov.activate
   end
 end
