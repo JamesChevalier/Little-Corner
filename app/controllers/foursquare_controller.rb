@@ -43,19 +43,22 @@ class FoursquareController < ApplicationController
     @foursquare_badges      = Rails.cache.fetch('foursquare_badges', expires_in: 12.hours, race_condition_ttl: 10) do
       foursquare_connection = Foursquare2::Client.new(client_id: FOURSQUARE_CLIENT_ID,
                                                       client_secret: FOURSQUARE_CLIENT_SECRET,
-                                                      oauth_token: FOURSQUARE_OAUTH_TOKEN) unless foursquare_connection
+                                                      oauth_token: FOURSQUARE_OAUTH_TOKEN,
+                                                      api_version: '20140201') unless foursquare_connection
       foursquare_connection.user_badges('self')
     end
     @foursquare_mayorships  = Rails.cache.fetch('foursquare_mayorships', expires_in: 12.hours, race_condition_ttl: 10) do
       foursquare_connection = Foursquare2::Client.new(client_id: FOURSQUARE_CLIENT_ID,
                                                       client_secret: FOURSQUARE_CLIENT_SECRET,
-                                                      oauth_token: FOURSQUARE_OAUTH_TOKEN) unless foursquare_connection
+                                                      oauth_token: FOURSQUARE_OAUTH_TOKEN,
+                                                      api_version: '20140201') unless foursquare_connection
       foursquare_connection.user_mayorships('self')
     end
     @foursquare_tips        = Rails.cache.fetch('foursquare_tips', expires_in: 12.hours, race_condition_ttl: 10) do
       foursquare_connection = Foursquare2::Client.new(client_id: FOURSQUARE_CLIENT_ID,
                                                       client_secret: FOURSQUARE_CLIENT_SECRET,
-                                                      oauth_token: FOURSQUARE_OAUTH_TOKEN) unless foursquare_connection
+                                                      oauth_token: FOURSQUARE_OAUTH_TOKEN,
+                                                      api_version: '20140201') unless foursquare_connection
       foursquare_connection.user_tips('self')
     end
   end

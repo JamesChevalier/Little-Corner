@@ -22,26 +22,28 @@
       </div>
 
       <h3>Mayorships</h3>
-      <p>
-        <% @foursquare_mayorships.items.each do |m| %>
-          <img src="<%= m.venue.categories.first.icon %>" border="0" title="<%= m.venue.name %>" />&nbsp;
-          <%= m.venue.name %><br />
-        <% end %>
-      </p>
+      <% @foursquare_mayorships.items.each do |m| %>
+        <p>
+          <img src="<%= "#{m.venue.categories.first.icon.prefix}bg_88#{m.venue.categories.first.icon.suffix}" %>" border="0" title="<%= m.venue.name %>" />&nbsp;
+          <%= m.venue.name %>
+        </p>
+      <% end %>
 
       <hr>
 
       <h3>Tips</h3>
-      <p>
-        <% @foursquare_tips.items.each do |t| %>
-          <h6><%= t.venue.name %></h6>
-          <div style="float:left;padding-right:10px;">
-            <img src="<%= t.venue.categories.first.icon %>" border="0" title="<%= t.venue.name %>" />
+      <% @foursquare_tips.items.each do |t| %>
+        <div class="row" style="padding-bottom:22px;">
+          <div class="small-2 columns">
+            <img src="<%= "#{t.venue.categories.first.icon.prefix}bg_88#{t.venue.categories.first.icon.suffix}" %>" border="0" title="<%= t.venue.name %>" />
           </div>
-          <div><%= t.text %></div>
-          <hr>
-        <% end %>
-      </p>
+
+          <div class="small-10 columns">
+            <h6><%= t.venue.name %></h6>
+            <%= t.text %>
+          </div>
+        </div>
+      <% end %>
 
       <h6>
         <a href="https://foursquare.com/<%= FOURSQUARE_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ Foursquare</a>
