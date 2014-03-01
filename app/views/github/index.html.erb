@@ -7,7 +7,7 @@
 
       <% @github_repositories.each do |r| %>
         <% if r['private'] == false %>
-          <a href="<%= r['url'] %>"><h4><%= r['name'] %></h4></a>
+          <a href="<%= r['html_url'] %>"><h4><%= r['name'] %></h4></a>
           <p>
             <% if r['fork'] == true %>
               <span class="radius secondary label">Fork</span>&nbsp;
@@ -25,7 +25,7 @@
               <span class="radius alert label"><%= r['open_issues'] %> open issues</span>&nbsp;
             <% end %>
 
-            <a href="<%= r['url'] %>" target="_blank"><span class="radius success label">See it on GitHub</span></a>&nbsp;
+            <a href="<%= r['html_url'] %>" target="_blank"><span class="radius success label">See it on GitHub</span></a>&nbsp;
 
             <% if r['homepage'] %>
               <a href="<%= r['homepage'] %>" target="_blank"><span class="radius success label">Go to the Homepage</span></a>&nbsp;
@@ -37,7 +37,7 @@
         <% end %>
       <% end %>
 
-      <h6><a href="https://github.com/<%= GITHUB_USER_NAME %>" target="_blank"><%= YOUR_NAME %> @ GitHub</a></h6>
+      <h6><a href="<%= r['owner']['html_url'] %>" target="_blank"><%= YOUR_NAME %> @ GitHub</a></h6>
     </div>
   </div>
 </div>
