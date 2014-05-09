@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', '3.2.17'
+gem 'rails', '3.2.18'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
@@ -42,7 +42,7 @@ group :test do
 end
 
 gem 'coveralls', require: false
-gem 'feedzirra'
+gem 'feedjira'
 gem 'flickraw'
 gem 'foursquare2'
 gem 'instagram'
