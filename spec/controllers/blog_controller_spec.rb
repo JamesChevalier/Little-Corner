@@ -10,7 +10,7 @@ describe BlogController do
       end
 
       it 'has a valid @feed' do
-        @feed = Feedzirra::Feed.fetch_and_parse(BLOG_FEED_URL)
+        @feed = Feedjira::Feed.fetch_and_parse(BLOG_FEED_URL)
         get :index, {}
         expect(assigns(:feed).title).to have_content(@feed.title)
       end
